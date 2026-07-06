@@ -42,6 +42,7 @@ RUN apk add --no-cache \
     # MySQL client
     mysql-client \
     # GD image library (for any image processing)
+    oniguruma-dev \
     libpng-dev \
     libjpeg-turbo-dev \
     freetype-dev \
