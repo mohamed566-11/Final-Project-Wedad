@@ -1,31 +1,12 @@
 # ╔══════════════════════════════════════════════════════════════╗
 # ║           WIDAD-TECH — Backend Dockerfile                   ║
-# ║           PHP 8.2-FPM | Alpine | Multi-Stage Build          ║
+# ║           PHP 8.4-FPM | Alpine | Multi-Stage Build          ║
 # ╚══════════════════════════════════════════════════════════════╝
 
 # ─────────────────────────────────────────────────────────────
-# Stage 1: Composer Dependencies (isolated, cached)
+# Stage 1: Base PHP & Extensions
 # ─────────────────────────────────────────────────────────────
-FROM php:8.4-cli-alpine AS composer-deps
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-WORKDIR /app
-
-# Copy dependency files first for layer caching
-COPY composer.json composer.lock ./
-
-# Install production dependencies only, skip scripts
-RUN composer install \
-    --no-dev \
-    --no-interaction \
-    --no-scripts \
-    --optimize-autoloader \
-    --prefer-dist
-
-# ─────────────────────────────────────────────────────────────
-# Stage 2: PHP Runtime (production-ready)
-# ─────────────────────────────────────────────────────────────
-FROM php:8.4-fpm-alpine AS runtime
+FROM php:8.4-fpm-alpine AS base
 
 LABEL maintainer="Widad-Tech Team"
 LABEL description="Laravel 12 API — Widad Health Platform"
@@ -85,6 +66,31 @@ RUN pecl install redis \
 # ── Cleanup build deps ───────────────────────────────────────
 RUN apk del $PHPIZE_DEPS \
     && rm -rf /var/cache/apk/*
+
+# ─────────────────────────────────────────────────────────────
+# Stage 2: Composer Dependencies (isolated, cached)
+# ─────────────────────────────────────────────────────────────
+FROM base AS composer-deps
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+WORKDIR /app
+
+# Copy dependency files first for layer caching
+COPY composer.json composer.lock ./
+
+# Install production dependencies only, skip scripts
+RUN composer install \
+    --no-dev \
+    --no-interaction \
+    --no-scripts \
+    --optimize-autoloader \
+    --prefer-dist
+
+# ─────────────────────────────────────────────────────────────
+# Stage 3: PHP Runtime (production-ready)
+# ─────────────────────────────────────────────────────────────
+FROM base AS runtime
 
 # ── PHP Configuration ─────────────────────────────────────────
 COPY docker/php/php.ini /usr/local/etc/php/conf.d/widad.ini
