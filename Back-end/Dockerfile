@@ -6,7 +6,8 @@
 # ─────────────────────────────────────────────────────────────
 # Stage 1: Composer Dependencies (isolated, cached)
 # ─────────────────────────────────────────────────────────────
-FROM composer:2.7 AS composer-deps
+FROM php:8.4-cli-alpine AS composer-deps
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
@@ -24,7 +25,7 @@ RUN composer install \
 # ─────────────────────────────────────────────────────────────
 # Stage 2: PHP Runtime (production-ready)
 # ─────────────────────────────────────────────────────────────
-FROM php:8.2-fpm-alpine AS runtime
+FROM php:8.4-fpm-alpine AS runtime
 
 LABEL maintainer="Widad-Tech Team"
 LABEL description="Laravel 12 API — Widad Health Platform"
