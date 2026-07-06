@@ -20,6 +20,8 @@ RUN apk add --no-cache \
     curl \
     git \
     unzip \
+    linux-headers \
+    nginx \
     # MySQL client
     mysql-client \
     # GD image library (for any image processing)
@@ -122,12 +124,12 @@ RUN mkdir -p \
     && chmod -R 775 storage bootstrap/cache
 
 # ── Entrypoint ────────────────────────────────────────────────
+COPY docker/supervisord.conf /etc/supervisord.conf
+COPY docker/nginx/backend.conf /etc/nginx/http.d/default.conf
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-USER widad
-
-EXPOSE 9000
+EXPOSE 8080
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-CMD ["php-fpm"]
+CMD ["supervisord", "-c", "/etc/supervisord.conf"]
