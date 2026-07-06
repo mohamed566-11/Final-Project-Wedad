@@ -1,0 +1,58 @@
+# تقرير شامل عن نظام الاستشارات المرئية (Video Consultations)
+
+## 1. شرح ما يحدث عند الضغط على زر "ربط حساب Google الآن"
+
+بناءً على الصورة المرفقة والكود الموجود في النظام، عند ضغط الطبيب على زر **"ربط حساب Google الآن"** في صفحة الإعدادات، تحدث الخطوات التقنية التالية بالترتيب:
+
+1. **في الواجهة الأمامية (Frontend - [GoogleConnect.tsx](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Front-End/src/pages/doctor/settings/GoogleConnect.tsx)):**
+   - يتم تشغيل الدالة [connectGoogle()](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Front-End/src/pages/doctor/settings/GoogleConnect.tsx#82-98).
+   - تقوم الدالة باستدعاء واجهة برمجة التطبيقات (API) للحصول على رابط المصادقة: `consultationService.getGoogleAuthUrl()`.
+2. **في الواجهة الخلفية (Backend - `GoogleAuthController@getAuthUrl` و [GoogleMeetService](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/GoogleMeetService.php#19-434)):**
+   - يتم التأكد من هوية الطبيب المسجل.
+   - يتم إنشاء رمز حالة عشوائي (`state`) وحفظه مؤقتاً في الـ Cache لمدة 10 دقائق لتجنب الثغرات الأمنية المرتبطة بهجمات `CSRF`.
+   - يتم استخدام مكتبة `Google API Client` لتوليد رابط مصادقة يطلب صلاحيات الوصول إلى تقويم جوجل (Google Calendar).
+3. **التوجيه (Redirect):**
+   - يُرجع الخادم رابط المصادقة للواجهة الأمامية.
+   - تقوم الواجهة الأمامية بتوجيه المتصفح تلقائياً إلى صفحة مصادقة Google الآمنة خارج الموقع السحابي (`window.location.href = auth_url`).
+4. **الموافقة والربط (Callback):**
+   - بعد موافقة الطبيب، تقوم Google بتوجيه الطبيب عائداً إلى المنصة برمز مرور (`code`).
+   - تلتقط واجهة React هذا الرمز وترسله للخادم ليتم استبداله برمز وصول (`access_token`) ورمز تحديث (`refresh_token`)، ويتم حفظ هذه البيانات في قاعدة بيانات الطبيب.
+   - تصبح حالة الطبيب الآن "متصل"، ويظهر الزر الأخضر للموافقة.
+
+---
+
+## 2. مراجعة شاملة لأكواد النظام المتعلقة بالطبيب والمريض
+
+### أ. دور الطبيب (Doctor)
+- **ملف الإعدادات والربط:** ملف [GoogleConnect.tsx](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Front-End/src/pages/doctor/settings/GoogleConnect.tsx) يوفر واجهة سلسة وبصرية عالية الجودة (Glassmorphism) تمكن الطبيب من ربط وإلغاء ربط حسابه. يعرض حالة الاتصال في الزمن الفعلي.
+- **بدء الاستشارة (`ConsultationController@start`):**
+   - يمكن للطبيب بدء الاستشارة بالنقر على زر البدء.
+   - إذا لم يكن رابط Google Meet موجوداً مسبقاً، يحاول الخادم إنشاءه عبر دالة [startConsultation](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/ConsultationService.php#359-417).
+   - في حال كان الوقت بعيداً، يمنع الخادم بدء الجلسة (إلا إذا كان في وضع المطور `debug`).
+- **إدارة المواعيد ([ConsultationService](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/ConsultationService.php#12-602)):**
+   - يتم وضع قيود صارمة بحيث لا يسمح بإلغاء موعد أو إعادة جدولته إلا بشروط (مثل قبل الموعد بـ 24 ساعة).
+   - عند إلغاء استشارة أو إعادة جدولتها، يتم تلقائياً التواصل مع API الخاص بـ Google Meeting لتعديل أو حذف الحدث من تقويم الطبيب.
+
+### ب. دور المريض (Patient)
+- **حجز الاستشارة (`ConsultationService@bookConsultation`):**
+   - عندما يحجز المريض استشارة من النوع `video`، يتصل النظام فوراً ليأخذ وقت الحجز، ويتأكد من توفر الطبيب.
+   - يُنشئ النظام الحدث في `Google Calendar` الخاص بالطبيب، ويضيف المريض كـ `Attendee` ليرسله دعوة رسمية.
+- **الانضمام للاستشارة:**
+   - يمتلك المريض في شاشة تفاصيل الاستشارة زراً مخصصاً للانضمام. النظام يطبق دالة [canJoinMeeting](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/GoogleMeetService.php#415-433) للتحقق من أن المريض ينضم خلال الوقت المسموح (قبل 10 دقائق وحتى انتهاء وقت الجلسة).
+
+### ج. هندسة الخدمات (Service Layer - [GoogleMeetService](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/GoogleMeetService.php#19-434))
+- هذا الملف مبني بشكل ممتاز؛ فهو لا يعتمد على التفاعل المباشر داخل الـ Controller وإنما يفصل منطق الأعمال.
+- **تحديث الجلسات (Token Refreshing):** يحتوي على آلية للتحقق مما إذا كان صلاحية الـ `access_token` قد انتهت، ويقوم بتجديدها تلقائياً باستخدام `refresh_token` المخزن دون أي تدخل من الطبيب.
+- **دعم بيئة التطوير (Mocking):** توجد ميزة ذكية في [createMeeting](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/GoogleMeetService.php#135-251) حيث في وضع التطوير المحلي (`app.debug` = `true`) وبدون اتصال بجوجل، يتم الاعتماد على خوادم **Jitsi** لتوليد غرف اجتماعات فورية لتسهيل عملية فحص واختبار النظام دون الحاجة لربط حقيقي في مرحلة الـ Local.
+
+---
+
+## 3. ملخص تقييم هندسة النظام
+
+1. **الاعتمادية (Reliability):** يتم استخدام `Database Transactions` للتأكد من عدم حجز موعد ما لم يتم تأكيد الدفع وإدراج رابط الميت بشكل كامل لحفظ سلامة البيانات الكلية.
+2. **الاستقلالية (Decoupling):** نظام الربط بـ Google Calendar مفصول بالكامل في [GoogleMeetService](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/GoogleMeetService.php#19-434)، مما يجعل عمليات الصيانة أو استبدال المزود سهلة للغاية.
+3. **أمن وحماية (Security):** لا يطلب النظام سوى الصلاحيات المطلوبة (تقويم جوجل فقط)، والـ tokens محفوظة.
+4. **تجربة المستخدم (UX - UI):** صفحات الربط والاستشارات مصممة بمستوى متطور وفق التقنيات الحديثة (Glassmorphism، أزرار تفاعلية).
+
+**توصية بسيطة:**
+لتجنب انقطاع الخدمة في بيئة الـ Production، يجب الانتباه لتفعيل `refresh_token` واستمرارية تخزينه، حيث أن Google تسحبه إذا لم يكن الوصول `offline` مفعلاً (وهو بالفعل مفعل في السطر `$this->client->setAccessType('offline');` في خدمة الميت. لذلك النظام مهيأ للتشغيل والإنتاج بشكل مثالي).

@@ -1,0 +1,150 @@
+﻿
+  Dropping all tables ................................ 1s DONE
+
+   INFO  Preparing database.  
+
+  Creating migration table ...................... 43.48ms DONE
+
+   INFO  Running migrations.  
+
+  0001_01_01_000000_create_life_stages_table .... 96.42ms DONE
+  0001_01_01_000001_create_users_table ......... 406.51ms DONE
+  0001_01_01_000002_create_cache_table .......... 57.95ms DONE
+  0001_01_01_000003_create_jobs_table .......... 173.84ms DONE
+  0001_01_01_000004_create_roles_table .......... 57.13ms DONE
+  0001_01_01_000007_create_personal_access_tokens_table  75.47ms DONE
+  0001_01_01_000009_create_settings_site_table .. 35.64ms DONE
+  0001_01_01_000010_create_contact_us_table ..... 32.73ms DONE
+  0001_01_01_000011_create_about_us_table ....... 35.35ms DONE
+  0001_01_01_000012_create_join_us_table ........ 92.28ms DONE
+  0001_01_01_000013_create_faqs_table .......... 161.60ms DONE
+  0001_01_01_000014_create_admins_table ........ 192.83ms DONE
+  0001_01_01_000015_create_user_profiles_table . 162.58ms DONE
+  0001_01_01_000016_create_doctors_table ....... 249.24ms DONE
+  0001_01_01_000017_create_doctor_life_stages_table  258.30ms DONE
+  0001_01_01_000018_create_doctor_patients_table  263.90ms DONE
+  0001_01_01_000019_create_doctor_working_hours_table  162.25ms DONE
+  0001_01_01_000020_create_consultations_table . 498.07ms DONE
+  0001_01_01_000021_create_appointment_reminders_table  210.38ms DONE
+  0001_01_01_000022_create_consultation_reviews_table  397.68ms DONE
+  0001_01_01_000023_create_payments_table ...... 470.37ms DONE
+  0001_01_01_000024_create_articles_table ...... 574.49ms DONE
+  0001_01_01_000025_create_mood_entries_table .. 189.61ms DONE
+  0001_01_01_000026_create_weight_entries_table  163.19ms DONE
+  0001_01_01_000027_create_period_cycles_table . 189.25ms DONE
+  0001_01_01_000028_create_fertility_entries_table  181.71ms DONE
+  0001_01_01_000029_create_pregnancies_table ... 146.85ms DONE
+  0001_01_01_000030_create_pregnancy_entries_table  182.75ms DONE
+  0001_01_01_000031_create_patient_medical_files_table  473.87ms DONE
+  0001_01_01_000032_create_ai_chat_messages_table  261.36ms DONE
+  0001_01_01_000033_create_health_syncs_table .. 169.02ms DONE
+  0001_01_01_000034_create_notifications_table .. 50.07ms DONE
+  0001_01_01_000035_create_preeclampsia_predictions_table  585.21ms DONE
+  0001_01_01_000036_create_gestational_diabetes_predictions_table  466.19ms DONE
+  0001_01_01_000037_create_preterm_birth_predictions_table  543.28ms DONE
+  0001_01_01_000038_create_ml_predictions_history_table  208.60ms DONE
+  2019_05_11_000000_create_otps_table ........... 71.31ms DONE
+  2024_01_20_000001_create_push_subscriptions_table  164.34ms DONE
+  2025_01_01_000003_make_push_subscriptions_polymorphic  197.95ms DONE
+  2026_01_31_143445_create_pregnancy_medications_table  282.50ms DONE
+  2026_01_31_152500_create_pregnancy_kick_sessions_table  286.94ms DONE
+  2026_02_04_200000_create_notification_history_table  151.02ms DONE
+  2026_02_04_200001_create_admin_activities_table  248.99ms DONE
+  2026_02_04_200002_create_doctor_payouts_table  403.93ms DONE
+  2026_02_06_135746_create_patient_notes_table . 276.26ms DONE
+  2026_02_06_143000_create_payout_requests_table  159.72ms DONE
+  2026_02_06_150000_create_prescriptions_table . 404.15ms DONE
+  2026_02_08_183000_create_testimonials_table ... 28.59ms DONE
+  2026_02_08_190000_create_success_stories_table  32.76ms DONE
+  2026_03_01_210000_create_audit_logs_table .... 268.79ms DONE
+  2026_03_14_130000_create_chatbot_documents_table  70.43ms DONE
+  2026_06_04_000001_create_consultation_attachments_table  338.63ms DONE
+  2026_06_06_022846_create_doctor_join_requests_table  35.33ms DONE
+  2026_06_18_185759_create_patient_google_fits_table  154.26ms DONE
+  2026_06_18_185759_create_patient_sleeps_table  203.69ms DONE
+  2026_06_18_190017_create_patient_heart_rates_table  213.03ms DONE
+  2026_06_18_190025_create_patient_oxygens_table  226.17ms DONE
+  2026_06_18_190149_create_patient_steps_table . 220.82ms DONE
+  2026_06_21_000001_create_consultation_messages_table  278.23ms DONE
+  2026_06_21_000002_create_lab_test_results_table  235.56ms DONE
+  2026_06_21_000004_create_patient_chatbot_preferences_table  192.18ms DONE
+  2026_06_27_000001_create_scbu_admission_predictions_table  557.70ms DONE
+
+
+   INFO  Seeding database.  
+
+  Database\Seeders\RoleSeeder ........................ RUNNING  
+  Database\Seeders\RoleSeeder ..................... 31 ms DONE  
+
+  Database\Seeders\LifeStageSeeder ................... RUNNING  
+  Database\Seeders\LifeStageSeeder ................ 24 ms DONE  
+
+  Database\Seeders\SettingsSiteSeeder ................ RUNNING  
+  Database\Seeders\SettingsSiteSeeder .............. 8 ms DONE  
+
+  Database\Seeders\AboutUsSeeder ..................... RUNNING  
+  Database\Seeders\AboutUsSeeder ................... 9 ms DONE  
+
+  Database\Seeders\AdminSeeder ....................... RUNNING  
+  Database\Seeders\AdminSeeder ................... 727 ms DONE  
+
+  Database\Seeders\DoctorSeeder ...................... RUNNING  
+  Database\Seeders\DoctorSeeder ................ 1,553 ms DONE  
+
+  Database\Seeders\PatientSeeder ..................... RUNNING  
+  Database\Seeders\PatientSeeder ............... 1,654 ms DONE  
+
+  Database\Seeders\DefaultImageSeeder ................ RUNNING  
+  Database\Seeders\DefaultImageSeeder .......... 3,414 ms DONE  
+
+  Database\Seeders\GestationalDiabetesPredictionSeeder  RUNNING  
+GestationalDiabetesPredictionSeeder: No active pregnancies. Skipping.
+  Database\Seeders\GestationalDiabetesPredictionSeeder  5 ms DONE  
+
+  Database\Seeders\ScbuAdmissionPredictionSeeder ..... RUNNING  
+ScbuAdmissionPredictionSeeder: No active pregnancies. Skipping.
+  Database\Seeders\ScbuAdmissionPredictionSeeder ... 5 ms DONE  
+
+  Database\Seeders\AiPredictionSeeder ................ RUNNING  
+Γ£à AiPredictionSeeder: 4 predictions created for sara@example.com
+  Database\Seeders\AiPredictionSeeder ............. 30 ms DONE  
+
+  Database\Seeders\DoctorWorkingHourSeeder ........... RUNNING  
+  Database\Seeders\DoctorWorkingHourSeeder ..... 1,453 ms DONE  
+
+  Database\Seeders\ConsultationSeeder ................ RUNNING  
+  Database\Seeders\ConsultationSeeder ............ 196 ms DONE  
+
+  Database\Seeders\PrescriptionSeeder ................ RUNNING  
+Γ£à PrescriptionSeeder: Done.
+  Database\Seeders\PrescriptionSeeder ............. 80 ms DONE  
+
+  Database\Seeders\LabTestSeeder ..................... RUNNING  
+  Database\Seeders\LabTestSeeder .................. 32 ms DONE  
+
+  Database\Seeders\PatientNoteSeeder ................. RUNNING  
+  Database\Seeders\PatientNoteSeeder .............. 64 ms DONE  
+
+  Database\Seeders\TrackerSeeder ..................... RUNNING  
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[01000]: Warning: 1265 Data truncated for column 'mood' at row 1 (Connection: mysql, SQL: insert into `mood_entries` (`user_id`, `entry_date`, `mood`, `factors`, `entry_time`, `updated_at`, `created_at`) values (4, 2026-06-13 00:00:00, sad, ["health","stress"], 2026-06-29 16:22:00, 2026-06-29 22:22:49, 2026-06-29 22:22:49))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:824
+    820Γûò                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    821Γûò                 );
+    822Γûò             }
+    823Γûò 
+  Γ₧£ 824Γûò             throw new QueryException(
+    825Γûò                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    826Γûò             );
+    827Γûò         }
+    828Γûò     }
+
+  1   vendor\laravel\framework\src\Illuminate\Database\MySqlConnection.php:53
+      PDOException::("SQLSTATE[01000]: Warning: 1265 Data truncated for column 'mood' at row 1")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\MySqlConnection.php:53
+      PDOStatement::execute()
+

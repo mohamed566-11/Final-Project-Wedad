@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "github.copilot",
+    "github.copilot-chat",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "open-solutions.intelephense",
+    "bmewburn.vscode-intelephense-client",
+    "ms-azuretools.vscode-docker",
+    "mikestead.dotenv",
+    "formulahendry.auto-rename-tag",
+    "dsznajder.es7-react-js-snippets",
+    "christian-kohler.path-intellisense"
+  ]
+}

@@ -1,0 +1,60 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# WIDAD-TECH — Docker Compose Override (Development)
+# 
+# هذا الملف يُطبَّق تلقائياً فوق docker-compose.yml في وضع Development
+# يُغيّر: volumes للـ hot-reload، ports إضافية، وضع debug
+# ═══════════════════════════════════════════════════════════════════════════
+
+name: widad
+
+services:
+
+  # ── App (Dev Mode) ────────────────────────────────────────────────────────
+  app:
+    build:
+      target: runtime    # Same target — override if you add dev target
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "true"
+      LOG_LEVEL: debug
+      RUN_MIGRATIONS: "true"
+    volumes:
+      # Hot-reload: mount source directly instead of copying
+      - ./Back-end:/var/www/html
+      - /var/www/html/vendor      # Keep vendor from image (don't overwrite)
+
+  # ── Queue (Dev: fewer workers) ────────────────────────────────────────────
+  queue:
+    command: ["php", "artisan", "queue:work",
+              "--sleep=3",
+              "--tries=1",           # 1 try only in dev
+              "--timeout=60",
+              "--verbose"]
+    deploy:
+      replicas: 1                   # 1 worker in dev
+
+  # ── MySQL (Dev: expose port) ───────────────────────────────────────────────
+  mysql:
+    ports:
+      - "3306:3306"                # Accessible from host (TablePlus, etc.)
+
+  # ── Redis (Dev: expose port) ───────────────────────────────────────────────
+  redis:
+    ports:
+      - "6379:6379"                # Accessible from host (RedisInsight, etc.)
+
+  # ── Frontend (Dev: Vite Dev Server instead of Nginx) ──────────────────────
+  # Uncomment to use Vite Dev Server with HMR instead of built Nginx
+  # frontend-dev:
+  #   image: node:20-alpine
+  #   container_name: widad_frontend_dev
+  #   working_dir: /app
+  #   command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - ./Front-End:/app
+  #   environment:
+  #     VITE_API_URL: http://localhost/api/v1
+  #   networks:
+  #     - widad_network

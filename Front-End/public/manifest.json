@@ -1,0 +1,80 @@
+{
+  "name": "Widad Health",
+  "short_name": "وداد",
+  "description": "منصة صحة المرأة المتكاملة - من التخطيط للحمل إلى الأمومة",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d9488",
+  "orientation": "portrait-primary",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.svg",
+      "sizes": "72x72",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["health", "medical", "lifestyle"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "احجزي استشارة",
+      "short_name": "حجز",
+      "description": "احجزي استشارة طبية الآن",
+      "url": "/patient/consultations/doctors",
+      "icons": [
+        {
+          "src": "/icons/icon-72x72.svg",
+          "sizes": "72x72"
+        }
+      ]
+    },
+    {
+      "name": "متتبع الحمل",
+      "short_name": "الحمل",
+      "description": "تابعي تطور حملك",
+      "url": "/patient/trackers/pregnancy",
+      "icons": [
+        {
+          "src": "/icons/icon-72x72.svg",
+          "sizes": "72x72"
+        }
+      ]
+    },
+    {
+      "name": "المقالات",
+      "short_name": "مقالات",
+      "description": "مقالات صحية مفيدة",
+      "url": "/articles",
+      "icons": [
+        {
+          "src": "/icons/icon-72x72.svg",
+          "sizes": "72x72"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.widad.health",
+      "id": "com.widad.health"
+    }
+  ],
+  "prefer_related_applications": false
+}

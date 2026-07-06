@@ -1,0 +1,63 @@
+============================================================
+  خطوات تشغيل وربط VAPID في مشروع وداد - الترتيب الكامل
+============================================================
+
+📁 الملفات المنشأة:
+─────────────────────────────────────────────
+  Backend (Laravel):
+    ├── config/webpush.php                          ← إعدادات VAPID
+    ├── app/Models/PushSubscription.php             ← Model
+    ├── database/migrations/..._push_subscriptions  ← Migration
+    ├── app/Services/WebPushService.php             ← خدمة الإرسال
+    ├── app/Http/Controllers/Api/NotificationController.php ← API
+    └── routes/patient.php                          ← Routes
+
+  Frontend (React):
+    ├── public/sw.js                                ← Service Worker
+    └── src/services/notificationService.ts         ← خدمة الإشعارات
+─────────────────────────────────────────────
+
+✅ الخطوات على السيرفر:
+─────────────────────────────────────────────
+
+  الخطوة 1: تثبيت المكتبة
+  ─────────────────────
+      composer require minishlink/web-push
+
+  الخطوة 2: توليد المفاتيح
+  ─────────────────────
+      php artisan tinker
+      >>> \Minishlink\WebPush\VAPID::createVapidKeys()
+
+  الخطوة 3: إضافة المفاتيح في .env
+  ─────────────────────
+      VAPID_SUBJECT=https://your-domain.com
+      VAPID_PUBLIC_KEY=المفتاح_العام
+      VAPID_PRIVATE_KEY=المفتاح_الخاص
+
+  الخطوة 4: نسخ الملفات للسيرفر
+  ─────────────────────
+      ├── config/webpush.php
+      ├── app/Models/PushSubscription.php
+      ├── app/Services/WebPushService.php
+      └── app/Http/Controllers/Api/NotificationController.php
+
+  الخطوة 5: تشغيل الـ Migration
+  ─────────────────────
+      php artisan migrate
+
+  الخطوة 6: تحديث الـ Routes
+  ─────────────────────
+      أضد routes الإشعارات في patient.php
+
+  الخطوة 7: بناء الـ Frontend
+  ─────────────────────
+      npm run build
+
+⚠️ شروط مهمة:
+─────────────────────────────────────────────
+  • الموقع يجب أن يكون HTTPS (ليس HTTP)
+  • الـ Service Worker يعمل فقط على HTTPS أو localhost
+  • لا تغيّر المفاتيح بعد الإطلاق إلا ضرورة
+  • الـ VAPID_PRIVATE_KEY سري - لا يُرفع للـ Git
+```

@@ -1,0 +1,34 @@
+{
+    "id": 2,
+    "title": "أعراض الحمل المبكرة وكيفية التعامل معها",
+    "slug": "aaarad-alhml-almbkr-okyfy-altaaaml-maaha",
+    "excerpt": "تعرفي على الأعراض الشائعة في بداية الحمل وطرق التخفيف منها",
+    "image": "http://localhost:8000/articles/7cca21c3-4887-45b5-bb07-613d17bd6ac2.jpeg",
+    "image_url": "http://localhost:8000/articles/7cca21c3-4887-45b5-bb07-613d17bd6ac2.jpeg",
+    "status": "approved",
+    "status_badge": "منشور",
+    "status_color": "green",
+    "life_stage": {
+        "id": 3,
+        "name": "motherhood",
+        "name_ar": "الأمومة والطفولة"
+    },
+    "views_count": 413,
+    "reading_time": 7,
+    "reading_time_text": "قراءة 7 دقائق",
+    "doctor": {
+        "id": 3,
+        "name": "محمد عبدالله",
+        "specialization": "endocrinology",
+        "specialization_ar": "غدد صماء",
+        "image": "http://localhost:8000/profiles/95075cc0-d8a1-4dda-a94f-fc62841575a5.jpeg",
+        "image_url": "http://localhost:8000/profiles/95075cc0-d8a1-4dda-a94f-fc62841575a5.jpeg",
+        "rating": "4.70"
+    },
+    "reviewed_at": "2026-06-04 22:35:10",
+    "published_at": "2026-06-05 22:35:10",
+    "published_date": "2026-06-05",
+    "published_date_human": "منذ 4 أسابيع",
+    "created_at": "2026-06-29 23:04:54",
+    "updated_at": "2026-07-04 22:35:10"
+}

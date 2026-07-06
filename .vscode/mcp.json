@@ -1,0 +1,20 @@
+{
+  "servers": {
+    "laravel-boost": {
+      "type": "stdio",
+      "command": "C:\\laragon\\bin\\php\\php-8.4.15-Win32-vs17-x64\\php.exe",
+      "args": ["artisan", "boost:mcp"],
+      "cwd": "D:\\Final_Project_Front_And_Back\\Back-end"
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "D:\\Final Project Front And Back\\Back-end",
+        "D:\\Final Project Front And Back\\Front-End"
+      ]
+    }
+  }
+}

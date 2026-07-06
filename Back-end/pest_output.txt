@@ -1,0 +1,422 @@
+
+   FAIL  Tests\Feature\Notifications\PushNotificationTest
+  ! it can fetch vapid public key → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead… 1.79s  
+  ⨯ it can subscribe device to push notifications                                                                                0.14s  
+  ⨯ it prevents duplicate subscription to same endpoint                                                                          0.09s  
+  ⨯ it can unsubscribe from push notifications                                                                                   0.08s  
+  ! it can fetch default notification settings → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_S… 0.17s  
+  ! it can update notification settings → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA i… 0.17s  
+  ! it can list notifications → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead //…  0.13s  
+  ! it can mark notification as read and fetch unread count → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo</>… 0.08s  
+  ! it can mark all as read → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:… 0.08s  
+  ! it can delete a notification → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead…  0.08s  
+  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Feature\Notifications\PushNotificationTest > it can subscribe device to push notifications                             
+  Expected response status code [200] but received 500.
+Failed asserting that 500 is identical to 200.
+
+The following exception occurred during the last request:
+
+PDOException: SQLSTATE[HY000]: General error: 1 table push_subscriptions has no column named user_id in D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php:564
+Stack trace:
+#0 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(564): PDO->prepare('insert into "pu...')
+#1 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(811): Illuminate\Database\Connection->{closure:Illuminate\Database\Connection::statement():559}('insert into "pu...', Array)
+#2 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(778): Illuminate\Database\Connection->runQueryCallback('insert into "pu...', Array, Object(Closure))
+#3 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(559): Illuminate\Database\Connection->run('insert into "pu...', Array, Object(Closure))
+#4 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(523): Illuminate\Database\Connection->statement('insert into "pu...', Array)
+#5 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(32): Illuminate\Database\Connection->insert('insert into "pu...', Array)
+#6 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(3853): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into "pu...', Array, 'id')
+#7 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(2235): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#8 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1436): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#9 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1401): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1240): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(1219): Illuminate\Database\Eloquent\Model->save()
+#12 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Support\helpers.php(390): Illuminate\Database\Eloquent\Builder->{closure:Illuminate\Database\Eloquent\Builder::create():1218}(Object(App\Models\PushSubscription))
+#13 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(1218): tap(Object(App\Models\PushSubscription), Object(Closure))
+#14 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#15 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2540): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#16 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2556): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#17 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Controllers\Api\NotificationController.php(169): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#18 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(46): App\Http\Controllers\Api\NotificationController->subscribe(Object(Illuminate\Http\Request))
+#19 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Route.php(265): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\Api\NotificationController), 'subscribe')
+#20 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Route.php(211): Illuminate\Routing\Route->runController()
+#21 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(822): Illuminate\Routing\Route->run()
+#22 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Routing\Router->{closure:Illuminate\Routing\Router::runRouteWithinStack():821}(Object(Illuminate\Http\Request))
+#23 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\CheckPatientEmailVerify.php(24): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#24 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\CheckPatientEmailVerify->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\CheckPatientStatus.php(25): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#26 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\CheckPatientStatus->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\OptimizeApiResponse.php(19): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#28 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\OptimizeApiResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(50): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#30 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php(63): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#32 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Auth\Middleware\Authenticate->handle(Object(Illuminate\Http\Request), Object(Closure), 'patient')
+#33 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#34 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(821): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#35 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(800): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#36 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(764): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
+#37 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(753): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#38 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(200): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#39 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Foundation\Http\Kernel->{closure:Illuminate\Foundation\Http\Kernel::dispatchToRouter():197}(Object(Illuminate\Http\Request))
+#40 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#41 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull.php(31): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#42 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#44 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TrimStrings.php(51): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#45 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\TrimStrings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#46 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePostSize.php(27): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#47 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#48 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php(109): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#49 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance->handle(Object(Illuminate\Http\Request), Object(Closure))
+#50 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\HandleCors.php(61): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#51 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
+#52 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\TrustProxies.php(58): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#53 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#54 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks.php(22): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#55 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks->handle(Object(Illuminate\Http\Request), Object(Closure))
+#56 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePathEncoding.php(26): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#57 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePathEncoding->handle(Object(Illuminate\Http\Request), Object(Closure))
+#58 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#59 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(175): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#60 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(144): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#61 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(607): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#62 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(573): Illuminate\Foundation\Testing\TestCase->call('POST', '/api/v1/patient...', Array, Array, Array, Array, '{"endpoint":"ht...')
+#63 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(411): Illuminate\Foundation\Testing\TestCase->json('POST', '/api/v1/patient...', Array, Array, 0)
+#64 D:\final-project main km\Final_Project_Front_And_Back\Back-end\tests\Feature\Notifications\PushNotificationTest.php(36): Illuminate\Foundation\Testing\TestCase->postJson('/api/v1/patient...', Array)
+#65 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Factories\TestCaseMethodFactory.php(168): P\Tests\Feature\Notifications\PushNotificationTest->{closure:D:\final-project main km\Final_Project_Front_And_Back\Back-end\tests\Feature\Notifications\PushNotificationTest.php:27}()
+#66 [internal function]: P\Tests\Feature\Notifications\PushNotificationTest->{closure:Pest\Factories\TestCaseMethodFactory::getClosure():158}()
+#67 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(429): call_user_func_array(Object(Closure), Array)
+#68 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Support\ExceptionTrace.php(26): P\Tests\Feature\Notifications\PushNotificationTest->{closure:Pest\Concerns\Testable::__callClosure():429}()
+#69 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(429): Pest\Support\ExceptionTrace::ensure(Object(Closure))
+#70 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(331): P\Tests\Feature\Notifications\PushNotificationTest->__callClosure(Object(Closure), Array)
+#71 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Factories\TestCaseFactory.php(169) : eval()'d code(26): P\Tests\Feature\Notifications\PushNotificationTest->__runTest(Object(Closure))
+#72 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(1317): P\Tests\Feature\Notifications\PushNotificationTest->__pest_evaluable_it_can_subscribe_device_to_push_notifications()
+#73 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(517): PHPUnit\Framework\TestCase->runTest()
+#74 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(99): PHPUnit\Framework\TestCase->runBare()
+#75 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(357): PHPUnit\Framework\TestRunner->run(Object(P\Tests\Feature\Notifications\PushNotificationTest))
+#76 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestSuite.php(374): PHPUnit\Framework\TestCase->run()
+#77 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#78 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\TextUI\Application.php(229): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#79 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Kernel.php(103): PHPUnit\TextUI\Application->run(Array)
+#80 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest(184): Pest\Kernel->handle(Array, Array)
+#81 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest(192): {closure:D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest:18}()
+#82 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\bin\pest(119): include('D:\\final-projec...')
+#83 {main}
+
+Next Illuminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table push_subscriptions has no column named user_id (Connection: sqlite, SQL: insert into "push_subscriptions" ("user_id", "subscribable_type", "subscribable_id", "endpoint", "p256dh_key", "auth_key", "user_agent", "updated_at", "created_at") values (1, App\Models\User, 1, https://fcm.googleapis.com/fcm/send/fake-endpoint, fake-p256dh-key, fake-auth-key, Symfony, 2026-07-01 04:29:54, 2026-07-01 04:29:54)) in D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php:824
+Stack trace:
+#0 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(778): Illuminate\Database\Connection->runQueryCallback('insert into "pu...', Array, Object(Closure))
+#1 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(559): Illuminate\Database\Connection->run('insert into "pu...', Array, Object(Closure))
+#2 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(523): Illuminate\Database\Connection->statement('insert into "pu...', Array)
+#3 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(32): Illuminate\Database\Connection->insert('insert into "pu...', Array)
+#4 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(3853): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into "pu...', Array, 'id')
+#5 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(2235): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1436): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#7 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1401): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#8 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1240): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#9 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(1219): Illuminate\Database\Eloquent\Model->save()
+#10 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Support\helpers.php(390): Illuminate\Database\Eloquent\Builder->{closure:Illuminate\Database\Eloquent\Builder::create():1218}(Object(App\Models\PushSubscription))
+#11 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(1218): tap(Object(App\Models\PushSubscription), Object(Closure))
+#12 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#13 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2540): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#14 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2556): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#15 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Controllers\Api\NotificationController.php(169): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#16 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(46): App\Http\Controllers\Api\NotificationController->subscribe(Object(Illuminate\Http\Request))
+#17 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Route.php(265): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\Api\NotificationController), 'subscribe')
+#18 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Route.php(211): Illuminate\Routing\Route->runController()
+#19 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(822): Illuminate\Routing\Route->run()
+#20 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Routing\Router->{closure:Illuminate\Routing\Router::runRouteWithinStack():821}(Object(Illuminate\Http\Request))
+#21 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\CheckPatientEmailVerify.php(24): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#22 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\CheckPatientEmailVerify->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\CheckPatientStatus.php(25): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#24 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\CheckPatientStatus->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\OptimizeApiResponse.php(19): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#26 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\OptimizeApiResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(50): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#28 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php(63): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#30 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Auth\Middleware\Authenticate->handle(Object(Illuminate\Http\Request), Object(Closure), 'patient')
+#31 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#32 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(821): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#33 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(800): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#34 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(764): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
+#35 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(753): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(200): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Foundation\Http\Kernel->{closure:Illuminate\Foundation\Http\Kernel::dispatchToRouter():197}(Object(Illuminate\Http\Request))
+#38 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#39 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull.php(31): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull->handle(Object(Illuminate\Http\Request), Object(Closure))
+#41 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#42 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TrimStrings.php(51): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\TrimStrings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#44 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePostSize.php(27): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#45 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#46 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php(109): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#47 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance->handle(Object(Illuminate\Http\Request), Object(Closure))
+#48 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\HandleCors.php(61): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#49 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
+#50 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\TrustProxies.php(58): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#51 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#52 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks.php(22): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#53 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks->handle(Object(Illuminate\Http\Request), Object(Closure))
+#54 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePathEncoding.php(26): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#55 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePathEncoding->handle(Object(Illuminate\Http\Request), Object(Closure))
+#56 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#57 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(175): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#58 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(144): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#59 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(607): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#60 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(573): Illuminate\Foundation\Testing\TestCase->call('POST', '/api/v1/patient...', Array, Array, Array, Array, '{"endpoint":"ht...')
+#61 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(411): Illuminate\Foundation\Testing\TestCase->json('POST', '/api/v1/patient...', Array, Array, 0)
+#62 D:\final-project main km\Final_Project_Front_And_Back\Back-end\tests\Feature\Notifications\PushNotificationTest.php(36): Illuminate\Foundation\Testing\TestCase->postJson('/api/v1/patient...', Array)
+#63 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Factories\TestCaseMethodFactory.php(168): P\Tests\Feature\Notifications\PushNotificationTest->{closure:D:\final-project main km\Final_Project_Front_And_Back\Back-end\tests\Feature\Notifications\PushNotificationTest.php:27}()
+#64 [internal function]: P\Tests\Feature\Notifications\PushNotificationTest->{closure:Pest\Factories\TestCaseMethodFactory::getClosure():158}()
+#65 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(429): call_user_func_array(Object(Closure), Array)
+#66 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Support\ExceptionTrace.php(26): P\Tests\Feature\Notifications\PushNotificationTest->{closure:Pest\Concerns\Testable::__callClosure():429}()
+#67 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(429): Pest\Support\ExceptionTrace::ensure(Object(Closure))
+#68 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(331): P\Tests\Feature\Notifications\PushNotificationTest->__callClosure(Object(Closure), Array)
+#69 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Factories\TestCaseFactory.php(169) : eval()'d code(26): P\Tests\Feature\Notifications\PushNotificationTest->__runTest(Object(Closure))
+#70 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(1317): P\Tests\Feature\Notifications\PushNotificationTest->__pest_evaluable_it_can_subscribe_device_to_push_notifications()
+#71 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(517): PHPUnit\Framework\TestCase->runTest()
+#72 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(99): PHPUnit\Framework\TestCase->runBare()
+#73 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(357): PHPUnit\Framework\TestRunner->run(Object(P\Tests\Feature\Notifications\PushNotificationTest))
+#74 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestSuite.php(374): PHPUnit\Framework\TestCase->run()
+#75 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#76 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\TextUI\Application.php(229): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#77 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Kernel.php(103): PHPUnit\TextUI\Application->run(Array)
+#78 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest(184): Pest\Kernel->handle(Array, Array)
+#79 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest(192): {closure:D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest:18}()
+#80 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\bin\pest(119): include('D:\\final-projec...')
+#81 {main}
+
+----------------------------------------------------------------------------------
+
+SQLSTATE[HY000]: General error: 1 table push_subscriptions has no column named user_id (Connection: sqlite, SQL: insert into "push_subscriptions" ("user_id", "subscribable_type", "subscribable_id", "endpoint", "p256dh_key", "auth_key", "user_agent", "updated_at", "created_at") values (1, App\Models\User, 1, https://fcm.googleapis.com/fcm/send/fake-endpoint, fake-p256dh-key, fake-auth-key, Symfony, 2026-07-01 04:29:54, 2026-07-01 04:29:54))
+
+  at tests\Feature\Notifications\PushNotificationTest.php:38
+     34▕     ];
+     35▕ 
+     36▕     $response = $this->postJson('/api/v1/patient/notifications/subscribe', $payload);
+     37▕ 
+  ➜  38▕     $response->assertStatus(200)
+     39▕              ->assertJsonPath('status', true);
+     40▕ 
+     41▕     $this->assertDatabaseHas('push_subscriptions', [
+     42▕         'user_id' => $this->user->id,
+
+  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Feature\Notifications\PushNotificationTest > it prevents duplicate subscription to same endpoint                       
+  Expected response status code [200] but received 500.
+Failed asserting that 500 is identical to 200.
+
+The following exception occurred during the last request:
+
+PDOException: SQLSTATE[HY000]: General error: 1 table push_subscriptions has no column named user_id in D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php:564
+Stack trace:
+#0 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(564): PDO->prepare('insert into "pu...')
+#1 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(811): Illuminate\Database\Connection->{closure:Illuminate\Database\Connection::statement():559}('insert into "pu...', Array)
+#2 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(778): Illuminate\Database\Connection->runQueryCallback('insert into "pu...', Array, Object(Closure))
+#3 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(559): Illuminate\Database\Connection->run('insert into "pu...', Array, Object(Closure))
+#4 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(523): Illuminate\Database\Connection->statement('insert into "pu...', Array)
+#5 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(32): Illuminate\Database\Connection->insert('insert into "pu...', Array)
+#6 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(3853): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into "pu...', Array, 'id')
+#7 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(2235): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#8 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1436): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#9 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1401): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1240): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(1219): Illuminate\Database\Eloquent\Model->save()
+#12 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Support\helpers.php(390): Illuminate\Database\Eloquent\Builder->{closure:Illuminate\Database\Eloquent\Builder::create():1218}(Object(App\Models\PushSubscription))
+#13 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(1218): tap(Object(App\Models\PushSubscription), Object(Closure))
+#14 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#15 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2540): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#16 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2556): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#17 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Controllers\Api\NotificationController.php(169): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#18 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(46): App\Http\Controllers\Api\NotificationController->subscribe(Object(Illuminate\Http\Request))
+#19 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Route.php(265): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\Api\NotificationController), 'subscribe')
+#20 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Route.php(211): Illuminate\Routing\Route->runController()
+#21 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(822): Illuminate\Routing\Route->run()
+#22 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Routing\Router->{closure:Illuminate\Routing\Router::runRouteWithinStack():821}(Object(Illuminate\Http\Request))
+#23 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\CheckPatientEmailVerify.php(24): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#24 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\CheckPatientEmailVerify->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\CheckPatientStatus.php(25): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#26 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\CheckPatientStatus->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\OptimizeApiResponse.php(19): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#28 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\OptimizeApiResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(50): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#30 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php(63): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#32 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Auth\Middleware\Authenticate->handle(Object(Illuminate\Http\Request), Object(Closure), 'patient')
+#33 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#34 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(821): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#35 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(800): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#36 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(764): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
+#37 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(753): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#38 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(200): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#39 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Foundation\Http\Kernel->{closure:Illuminate\Foundation\Http\Kernel::dispatchToRouter():197}(Object(Illuminate\Http\Request))
+#40 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#41 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull.php(31): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#42 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#44 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TrimStrings.php(51): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#45 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\TrimStrings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#46 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePostSize.php(27): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#47 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#48 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php(109): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#49 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance->handle(Object(Illuminate\Http\Request), Object(Closure))
+#50 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\HandleCors.php(61): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#51 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
+#52 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\TrustProxies.php(58): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#53 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#54 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks.php(22): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#55 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks->handle(Object(Illuminate\Http\Request), Object(Closure))
+#56 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePathEncoding.php(26): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#57 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePathEncoding->handle(Object(Illuminate\Http\Request), Object(Closure))
+#58 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#59 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(175): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#60 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(144): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#61 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(607): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#62 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(573): Illuminate\Foundation\Testing\TestCase->call('POST', '/api/v1/patient...', Array, Array, Array, Array, '{"endpoint":"ht...')
+#63 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(411): Illuminate\Foundation\Testing\TestCase->json('POST', '/api/v1/patient...', Array, Array, 0)
+#64 D:\final-project main km\Final_Project_Front_And_Back\Back-end\tests\Feature\Notifications\PushNotificationTest.php(61): Illuminate\Foundation\Testing\TestCase->postJson('/api/v1/patient...', Array)
+#65 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Factories\TestCaseMethodFactory.php(168): P\Tests\Feature\Notifications\PushNotificationTest->{closure:D:\final-project main km\Final_Project_Front_And_Back\Back-end\tests\Feature\Notifications\PushNotificationTest.php:48}()
+#66 [internal function]: P\Tests\Feature\Notifications\PushNotificationTest->{closure:Pest\Factories\TestCaseMethodFactory::getClosure():158}()
+#67 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(429): call_user_func_array(Object(Closure), Array)
+#68 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Support\ExceptionTrace.php(26): P\Tests\Feature\Notifications\PushNotificationTest->{closure:Pest\Concerns\Testable::__callClosure():429}()
+#69 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(429): Pest\Support\ExceptionTrace::ensure(Object(Closure))
+#70 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(331): P\Tests\Feature\Notifications\PushNotificationTest->__callClosure(Object(Closure), Array)
+#71 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Factories\TestCaseFactory.php(169) : eval()'d code(35): P\Tests\Feature\Notifications\PushNotificationTest->__runTest(Object(Closure))
+#72 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(1317): P\Tests\Feature\Notifications\PushNotificationTest->__pest_evaluable_it_prevents_duplicate_subscription_to_same_endpoint()
+#73 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(517): PHPUnit\Framework\TestCase->runTest()
+#74 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(99): PHPUnit\Framework\TestCase->runBare()
+#75 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(357): PHPUnit\Framework\TestRunner->run(Object(P\Tests\Feature\Notifications\PushNotificationTest))
+#76 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestSuite.php(374): PHPUnit\Framework\TestCase->run()
+#77 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#78 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\TextUI\Application.php(229): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#79 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Kernel.php(103): PHPUnit\TextUI\Application->run(Array)
+#80 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest(184): Pest\Kernel->handle(Array, Array)
+#81 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest(192): {closure:D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest:18}()
+#82 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\bin\pest(119): include('D:\\final-projec...')
+#83 {main}
+
+Next Illuminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 table push_subscriptions has no column named user_id (Connection: sqlite, SQL: insert into "push_subscriptions" ("user_id", "subscribable_type", "subscribable_id", "endpoint", "p256dh_key", "auth_key", "user_agent", "updated_at", "created_at") values (1, App\Models\User, 1, https://fcm.googleapis.com/fcm/send/fake-endpoint-duplicate, key1, auth1, Symfony, 2026-07-01 04:29:54, 2026-07-01 04:29:54)) in D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php:824
+Stack trace:
+#0 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(778): Illuminate\Database\Connection->runQueryCallback('insert into "pu...', Array, Object(Closure))
+#1 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(559): Illuminate\Database\Connection->run('insert into "pu...', Array, Object(Closure))
+#2 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Connection.php(523): Illuminate\Database\Connection->statement('insert into "pu...', Array)
+#3 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(32): Illuminate\Database\Connection->insert('insert into "pu...', Array)
+#4 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(3853): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into "pu...', Array, 'id')
+#5 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(2235): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1436): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#7 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1401): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#8 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1240): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#9 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(1219): Illuminate\Database\Eloquent\Model->save()
+#10 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Support\helpers.php(390): Illuminate\Database\Eloquent\Builder->{closure:Illuminate\Database\Eloquent\Builder::create():1218}(Object(App\Models\PushSubscription))
+#11 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(1218): tap(Object(App\Models\PushSubscription), Object(Closure))
+#12 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#13 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2540): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#14 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2556): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#15 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Controllers\Api\NotificationController.php(169): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#16 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(46): App\Http\Controllers\Api\NotificationController->subscribe(Object(Illuminate\Http\Request))
+#17 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Route.php(265): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\Api\NotificationController), 'subscribe')
+#18 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Route.php(211): Illuminate\Routing\Route->runController()
+#19 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(822): Illuminate\Routing\Route->run()
+#20 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Routing\Router->{closure:Illuminate\Routing\Router::runRouteWithinStack():821}(Object(Illuminate\Http\Request))
+#21 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\CheckPatientEmailVerify.php(24): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#22 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\CheckPatientEmailVerify->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\CheckPatientStatus.php(25): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#24 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\CheckPatientStatus->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 D:\final-project main km\Final_Project_Front_And_Back\Back-end\app\Http\Middleware\OptimizeApiResponse.php(19): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#26 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): App\Http\Middleware\OptimizeApiResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(50): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#28 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php(63): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#30 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Auth\Middleware\Authenticate->handle(Object(Illuminate\Http\Request), Object(Closure), 'patient')
+#31 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#32 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(821): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#33 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(800): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#34 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(764): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
+#35 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Routing\Router.php(753): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(200): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Foundation\Http\Kernel->{closure:Illuminate\Foundation\Http\Kernel::dispatchToRouter():197}(Object(Illuminate\Http\Request))
+#38 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#39 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull.php(31): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull->handle(Object(Illuminate\Http\Request), Object(Closure))
+#41 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#42 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TrimStrings.php(51): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\TrimStrings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#44 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePostSize.php(27): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#45 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#46 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php(109): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#47 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance->handle(Object(Illuminate\Http\Request), Object(Closure))
+#48 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\HandleCors.php(61): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#49 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
+#50 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\TrustProxies.php(58): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#51 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#52 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks.php(22): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#53 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks->handle(Object(Illuminate\Http\Request), Object(Closure))
+#54 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePathEncoding.php(26): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#55 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePathEncoding->handle(Object(Illuminate\Http\Request), Object(Closure))
+#56 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#57 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(175): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#58 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(144): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#59 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(607): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#60 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(573): Illuminate\Foundation\Testing\TestCase->call('POST', '/api/v1/patient...', Array, Array, Array, Array, '{"endpoint":"ht...')
+#61 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(411): Illuminate\Foundation\Testing\TestCase->json('POST', '/api/v1/patient...', Array, Array, 0)
+#62 D:\final-project main km\Final_Project_Front_And_Back\Back-end\tests\Feature\Notifications\PushNotificationTest.php(61): Illuminate\Foundation\Testing\TestCase->postJson('/api/v1/patient...', Array)
+#63 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Factories\TestCaseMethodFactory.php(168): P\Tests\Feature\Notifications\PushNotificationTest->{closure:D:\final-project main km\Final_Project_Front_And_Back\Back-end\tests\Feature\Notifications\PushNotificationTest.php:48}()
+#64 [internal function]: P\Tests\Feature\Notifications\PushNotificationTest->{closure:Pest\Factories\TestCaseMethodFactory::getClosure():158}()
+#65 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(429): call_user_func_array(Object(Closure), Array)
+#66 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Support\ExceptionTrace.php(26): P\Tests\Feature\Notifications\PushNotificationTest->{closure:Pest\Concerns\Testable::__callClosure():429}()
+#67 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(429): Pest\Support\ExceptionTrace::ensure(Object(Closure))
+#68 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Concerns\Testable.php(331): P\Tests\Feature\Notifications\PushNotificationTest->__callClosure(Object(Closure), Array)
+#69 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Factories\TestCaseFactory.php(169) : eval()'d code(35): P\Tests\Feature\Notifications\PushNotificationTest->__runTest(Object(Closure))
+#70 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(1317): P\Tests\Feature\Notifications\PushNotificationTest->__pest_evaluable_it_prevents_duplicate_subscription_to_same_endpoint()
+#71 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(517): PHPUnit\Framework\TestCase->runTest()
+#72 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(99): PHPUnit\Framework\TestCase->runBare()
+#73 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestCase.php(357): PHPUnit\Framework\TestRunner->run(Object(P\Tests\Feature\Notifications\PushNotificationTest))
+#74 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\Framework\TestSuite.php(374): PHPUnit\Framework\TestCase->run()
+#75 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#76 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\phpunit\phpunit\src\TextUI\Application.php(229): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#77 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\src\Kernel.php(103): PHPUnit\TextUI\Application->run(Array)
+#78 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest(184): Pest\Kernel->handle(Array, Array)
+#79 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest(192): {closure:D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\pestphp\pest\bin\pest:18}()
+#80 D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\bin\pest(119): include('D:\\final-projec...')
+#81 {main}
+
+----------------------------------------------------------------------------------
+
+SQLSTATE[HY000]: General error: 1 table push_subscriptions has no column named user_id (Connection: sqlite, SQL: insert into "push_subscriptions" ("user_id", "subscribable_type", "subscribable_id", "endpoint", "p256dh_key", "auth_key", "user_agent", "updated_at", "created_at") values (1, App\Models\User, 1, https://fcm.googleapis.com/fcm/send/fake-endpoint-duplicate, key1, auth1, Symfony, 2026-07-01 04:29:54, 2026-07-01 04:29:54))
+
+  at tests\Feature\Notifications\PushNotificationTest.php:63
+     59▕ 
+     60▕     // Second time
+     61▕     $response = $this->postJson('/api/v1/patient/notifications/subscribe', $payload);
+     62▕ 
+  ➜  63▕     $response->assertStatus(200)
+     64▕              ->assertJsonPath('message', 'الاشتراك موجود بالفعل');
+     65▕ 
+     66▕     expect(PushSubscription::where('endpoint', $payload['endpoint'])->count())->toBe(1);
+     67▕ });
+
+  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Feature\Notifications\PushNotificationTest > it can unsubscribe from push notifications               QueryException   
+  SQLSTATE[HY000]: General error: 1 table push_subscriptions has no column named user_id (Connection: sqlite, SQL: insert into "push_subscriptions" ("user_id", "subscribable_type", "subscribable_id", "endpoint", "p256dh_key", "auth_key", "updated_at", "created_at") values (1, App\Models\User, 1, https://fcm.googleapis.com/fcm/send/delete-me, key, auth, 2026-07-01 04:29:54, 2026-07-01 04:29:54))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:564
+    560▕             if ($this->pretending()) {
+    561▕                 return true;
+    562▕             }
+    563▕ 
+  ➜ 564▕             $statement = $this->getPdo()->prepare($query);
+    565▕ 
+    566▕             $this->bindValues($statement, $this->prepareBindings($bindings));
+    567▕ 
+    568▕             $this->recordsHaveBeenModified();
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:564
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:811
+
+
+  Tests:    7 deprecated, 3 failed (31 assertions)
+  Duration: 3.49s
+

@@ -1,0 +1,67 @@
+# ═══════════════════════════════════════════════════════════════
+# WIDAD-TECH — Backend .dockerignore
+# Excludes unnecessary files from Docker build context
+# ═══════════════════════════════════════════════════════════════
+
+# ── Git ──────────────────────────────────────────────────────
+.git
+.gitignore
+.gitattributes
+
+# ── Environment (never in images!) ───────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Dependencies (installed fresh in container) ───────────────
+vendor/
+node_modules/
+
+# ── IDE & Editor ─────────────────────────────────────────────
+.cursor/
+.idea/
+.vscode/
+.editorconfig
+.junie/
+.gemini/
+
+# ── Test files ────────────────────────────────────────────────
+tests/
+pest.json
+phpunit.xml
+.phpunit.result.cache
+.phpunit.cache/
+
+# ── Dev logs & temp files ─────────────────────────────────────
+*.log
+storage/logs/*
+!storage/logs/.gitkeep
+storage/framework/cache/data/*
+!storage/framework/cache/data/.gitkeep
+storage/framework/sessions/*
+!storage/framework/sessions/.gitkeep
+storage/framework/views/*
+!storage/framework/views/.gitkeep
+bootstrap/cache/*
+!bootstrap/cache/.gitkeep
+storage/pail/
+
+# ── Debug & temp PHP files ───────────────────────────────────
+debug.php
+test_*.php
+simulation*.php
+patch_*.php
+mass_*.php
+sync_*.php
+*.txt
+!README.md
+
+# ── Docker (meta) ─────────────────────────────────────────────
+Dockerfile
+Dockerfile.*
+docker/
+docker-compose*.yml
+
+# ── OS Files ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

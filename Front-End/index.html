@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- App Info -->
+  <title>منصة وداد الصحية</title>
+  <meta name="description"
+    content="منصة وداد الصحية - رفيقتكِ الذكية لرحلة صحية متكاملة. استشارات طبية، متابعة الحمل، وتنبؤات الذكاء الاصطناعي." />
+  <meta name="author" content="Widad Health" />
+  <meta name="keywords" content="صحة المرأة, حمل, أمومة, استشارات طبية, وداد, متابعة الحمل" />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0d9488" />
+  <meta name="msapplication-TileColor" content="#0d9488" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="منصة وداد الصحية" />
+  <meta property="og:description" content="منصة وداد الصحية - رفيقتكِ الذكية لرحلة صحية متكاملة" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://widad.health" />
+  <meta property="og:image" content="/icons/icon-512x512.svg" />
+  <meta property="og:locale" content="ar_EG" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="منصة وداد الصحية" />
+  <meta name="twitter:description" content="رفيقتكِ الذكية لرحلة صحية متكاملة" />
+  <meta name="twitter:image" content="/icons/icon-512x512.svg" />
+
+  <!-- iOS PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="وداد" />
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered:', registration.scope);
+          })
+          .catch(error => {
+            console.log('SW registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+
+</html>

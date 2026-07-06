@@ -1,0 +1,67 @@
+/* Custom Animations for Doctor Profile */
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes bounce-subtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #0d9488, #14b8a6, #2dd4bf, #0d9488);
+  background-size: 200% 100%;
+  animation: shimmer 5s infinite linear;
+}
+
+/* Hide scrollbar for category bars if needed */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Base styles refinement */
+.font-outfit {
+  font-family: inherit;
+}
+
+/* RTL Specific adjustments if needed */
+[dir="rtl"] .tracking-tight {
+  letter-spacing: 0;
+}

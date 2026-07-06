@@ -1,0 +1,98 @@
+
+   FAIL  Tests\Feature\Consultation\ReviewTest
+  ⨯ it allows patient to submit a review for a completed consultation                                                            1.46s  
+  ⨯ it prevents patient from reviewing an incomplete consultation                                                                0.06s  
+  ! it prevents patient from duplicate reviewing the same consultation → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.… 0.06s  
+  ⨯ it validates rating is between 1 and 5                                                                                       0.06s  
+  ⨯ it doctor can list their own reviews                                                                                         0.07s  
+  ⨯ it doctor can toggle review visibility                                                                                       0.05s  
+  ! it doctor can delete their own review → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA… 0.06s  
+  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Feature\Consultation\ReviewTest > it allows patient to submit a review for a completed consultation                    
+  Failed asserting that null is identical to true.
+
+  at tests\Feature\Consultation\ReviewTest.php:59
+     55▕             'comment' => 'The doctor was very helpful and professional.',
+     56▕         ]);
+     57▕ 
+     58▕     $response->assertStatus(201)
+  ➜  59▕         ->assertJsonPath('success', true)
+     60▕         ->assertJsonPath('data.rating', 5)
+     61▕         ->assertJsonPath('data.comment', 'The doctor was very helpful and professional.');
+     62▕ 
+     63▕     $this->assertDatabaseHas('consultation_reviews', [
+
+  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Feature\Consultation\ReviewTest > it prevents patient from reviewing an incomplete consultation                        
+  Expected response status code [400] but received 404.
+Failed asserting that 404 is identical to 400.
+
+  at tests\Feature\Consultation\ReviewTest.php:85
+     81▕             'comment' => 'Great experience',
+     82▕         ]);
+     83▕ 
+     84▕     // Only completed consultations can be reviewed
+  ➜  85▕     $response->assertStatus(400); 
+     86▕     
+     87▕     $this->assertDatabaseMissing('consultation_reviews', [
+     88▕         'consultation_id' => $consultation->id,
+     89▕     ]);
+
+  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Feature\Consultation\ReviewTest > it validates rating is between 1 and 5                              QueryException   
+  SQLSTATE[HY000]: General error: 1 table consultations has no column named patient_id (Connection: sqlite, SQL: insert into "consultations" ("doctor_id", "user_id", "date", "time", "status", "type", "price", "platform_commission", "duration_minutes", "patient_notes", "patient_id", "updated_at", "created_at") values (1, 2, 2026-07-08 00:00:00, 15:00:00, completed, video, 479.09, 71.8635, 30, ?, 1, 2026-07-01 03:50:35, 2026-07-01 03:50:35))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:564
+    560▕             if ($this->pretending()) {
+    561▕                 return true;
+    562▕             }
+    563▕ 
+  ➜ 564▕             $statement = $this->getPdo()->prepare($query);
+    565▕ 
+    566▕             $this->bindValues($statement, $this->prepareBindings($bindings));
+    567▕ 
+    568▕             $this->recordsHaveBeenModified();
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:564
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:811
+
+  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Feature\Consultation\ReviewTest > it doctor can list their own reviews                                QueryException   
+  SQLSTATE[HY000]: General error: 1 table consultation_reviews has no column named is_visible (Connection: sqlite, SQL: insert into "consultation_reviews" ("consultation_id", "doctor_id", "user_id", "rating", "comment", "is_anonymous", "is_visible", "updated_at", "created_at") values (1, 1, 3, 4, شرح ممتاز ومتابعة جيدة بعد الاستشارة., 0, 1, 2026-07-01 03:50:35, 2026-07-01 03:50:35))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:564
+    560▕             if ($this->pretending()) {
+    561▕                 return true;
+    562▕             }
+    563▕ 
+  ➜ 564▕             $statement = $this->getPdo()->prepare($query);
+    565▕ 
+    566▕             $this->bindValues($statement, $this->prepareBindings($bindings));
+    567▕ 
+    568▕             $this->recordsHaveBeenModified();
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:564
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:811
+
+  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Feature\Consultation\ReviewTest > it doctor can toggle review visibility                              QueryException   
+  SQLSTATE[HY000]: General error: 1 table consultation_reviews has no column named is_visible (Connection: sqlite, SQL: insert into "consultation_reviews" ("consultation_id", "doctor_id", "user_id", "rating", "comment", "is_anonymous", "is_visible", "updated_at", "created_at") values (1, 1, 3, 4, سريعة في الرد ومعلوماتها دقيقة، أنصح بالتواصل معها., 0, 1, 2026-07-01 03:50:35, 2026-07-01 03:50:35))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:564
+    560▕             if ($this->pretending()) {
+    561▕                 return true;
+    562▕             }
+    563▕ 
+  ➜ 564▕             $statement = $this->getPdo()->prepare($query);
+    565▕ 
+    566▕             $this->bindValues($statement, $this->prepareBindings($bindings));
+    567▕ 
+    568▕             $this->recordsHaveBeenModified();
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:564
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:811
+
+
+  Tests:    2 deprecated, 5 failed (6 assertions)
+  Duration: 2.22s
+

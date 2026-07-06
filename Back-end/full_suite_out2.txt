@@ -1,0 +1,22 @@
+
+  [41;1m Error [49;22m
+
+[39;1m  Call to undefined method Pest\PendingCalls\UsesCall::skip()[39;22m
+
+  at [32mtests\Feature\Chatbot\GuestMessageStatusSecurityTest.php[39m:[32m19[39m
+     15▕ use App\Models\AiChatMessage;
+     16▕ use App\Models\User;
+     17▕ use Illuminate\Foundation\Testing\RefreshDatabase;
+     18▕ 
+  ➜  19▕ uses(RefreshDatabase::class)->skip('Skipped public chatbot tests as per user request');
+     20▕ 
+     21▕ 
+     22▕ use function Pest\Laravel\getJson;
+     23▕
+
+  [33m1   [39m[39;1mvendor\pestphp\pest\overrides\Runner\TestSuiteLoader.php[39;22m:[39;1m92[39;22m
+
+  [33m2   [39m[39;1mvendor\pestphp\pest\overrides\Runner\TestSuiteLoader.php[39;22m:[39;1m98[39;22m
+  [90m    PHPUnit\Runner\TestSuiteLoader::{closure:PHPUnit\Runner\TestSuiteLoader::load():90}()[39m
+
+

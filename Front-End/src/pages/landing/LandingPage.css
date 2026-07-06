@@ -1,0 +1,87 @@
+/* LandingPage.css - Additional page-level styles */
+
+.landing-page {
+    min-height: 100vh;
+    background: #fff;
+}
+
+/* Loading State */
+.landing-loading {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, #fff5f8 0%, #f0fdfb 100%);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 107, 157, 0.2);
+    border-top-color: #FF6B9D;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.landing-loading p {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Error State */
+.landing-error {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+}
+
+.landing-error p {
+    font-size: 1.2rem;
+    color: #dc3545;
+    font-weight: 500;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background: rgba(255, 107, 157, 0.2);
+    color: #1a1a2e;
+}
+
+/* Focus styles for accessibility */
+.landing-page a:focus,
+.landing-page button:focus {
+    outline: 2px solid #FF6B9D;
+    outline-offset: 2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: #FF6B9D;
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 9999;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}

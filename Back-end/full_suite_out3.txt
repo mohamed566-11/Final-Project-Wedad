@@ -1,0 +1,402 @@
+
+   DEPR  Tests\Unit\ChatbotServiceTest
+  ! ChatbotService::parseSSEResponse → it extracts text from assistant role in Gradio format → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\M… 0.26s  
+  ! ChatbotService::parseSSEResponse → it falls back to plain string when no assistant role found → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use…  0.04s  
+  ! ChatbotService::parseSSEResponse → it returns fallback message when data is empty → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::A… 0.03s  
+  ! ChatbotService::parseSSEResponse → it handles first element of plain array response → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql:… 0.03s  
+  ! ChatbotService::sanitizeForExternalAi → it redacts Egyptian phone numbers → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_… 0.03s  
+  ! ChatbotService::sanitizeForExternalAi → it redacts email addresses → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA inst… 0.03s  
+  ! ChatbotService::sanitizeForExternalAi → it redacts 14-digit national ID → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA… 0.02s  
+  ! ChatbotService::sanitizeForExternalAi → it does not modify normal text → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA…  0.02s  
+  ! ChatbotService::getBotTypeFromStage → it returns public for null life_stage_id → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR… 0.02s  
+  ! ChatbotService::getBotTypeFromStage → it maps stage 1 to pre_marriage → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA i… 0.02s  
+  ! ChatbotService::getBotTypeFromStage → it maps stage 2 to pregnancy → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA inst… 0.02s  
+  ! ChatbotService::getBotTypeFromStage → it maps stage 3 to motherhood → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA ins… 0.02s  
+  ! ChatbotService::getBotTypeFromStage → it returns public for unknown stage → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_… 0.02s  
+  ! ChatbotService::sendMessage (Bot Toggle) → it returns BOT_DISABLED error when bot is toggled off via Cache → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated si… 0.03s  
+  ! ChatbotService::sendMessage (Bot Toggle) → it Cache flag is absent by default (bot enabled) → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pd… 0.03s  
+  ! ChatbotService::sendMessage (Bot Toggle) → it re-enables bot after Cache::forget → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::AT… 0.02s  
+  ! ChatbotService::sendMessage (Bot Toggle) → it toggling on then off produces correct Cache states → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, u… 0.03s  
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true                                                                                                                                              0.02s  
+
+   DEPR  Tests\Unit\PeriodAnalyticsTest
+  ! weighted avg returns default with no data → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project m… 0.03s  
+  ! weighted avg returns single value → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\F… 0.03s  
+  ! weighted avg favors recent values → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\F… 0.03s  
+  ! weighted avg with three cycles → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fina… 0.03s  
+  ! std dev with uniform data → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pro… 0.03s  
+  ! std dev with varied data → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Proj… 0.03s  
+  ! std dev returns zero for single value → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main…  0.03s  
+  ! confidence none with no cycles → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fina… 0.02s  
+  ! confidence low with few cycles → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fina… 0.03s  
+  ! confidence high with regular cycles → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km… 0.03s  
+  ! confidence medium → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Fro… 0.03s  
+  ! health score perfect → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_… 0.02s  
+  ! health score penalises irregular → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fi… 0.02s  
+  ! health score penalises abnormal length → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main… 0.03s  
+  ! health score stays in range → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_P… 0.03s  
+  ! fertility score with positive indicators → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.03s  
+  ! fertility score is clamped → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pr… 0.04s  
+  ! fertility score lower without indicators → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.03s  
+  ! prediction range wider for irregular → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main k… 0.03s  
+  ! prediction range center is weighted avg → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project mai… 0.03s  
+
+   DEPR  Tests\Feature\Admin\AnalyticsTest
+  ! it admin with view_analytics can see dashboard stats → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fina… 0.43s  
+  ! it admin can view analytics overview → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main k… 0.04s  
+  ! it admin can view AI model analytics → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main k… 0.07s  
+  ! it admin can view chatbot stats → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fin… 0.05s  
+  ! it admin can view chatbot conversations → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project mai… 0.05s  
+
+   DEPR  Tests\Feature\Admin\CmsTest
+  ! it admin can view articles pending review → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project m… 0.05s  
+  ! it admin with review_articles can approve article → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-p… 0.06s  
+  ! it admin can reject article → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_P… 0.10s  
+  ! it admin with manage_faqs can create FAQ → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.04s  
+  ! it admin can update site settings → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\F… 0.05s  
+  ! it admin can view audit logs → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_… 0.04s  
+  ! it admin can manage roles → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pro… 0.04s  
+
+   DEPR  Tests\Feature\Admin\FinancialTest
+  ! it admin with manage_financials can view financial overview → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead //…  0.06s  
+  ! it admin without manage_financials gets 403 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project… 0.03s  
+  ! it admin can view transactions → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fina… 0.03s  
+  ! it admin with process_payouts can view payout requests → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fi… 0.03s  
+
+   DEPR  Tests\Feature\Admin\UserManagementTest
+  ! it admin can list patients with pagination → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.04s  
+  ! it admin can view single patient → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fi… 0.03s  
+  ! it admin with manage_users can toggle patient status → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fina… 0.03s  
+  ! it admin without manage_users cannot toggle patient status → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D… 0.03s  
+  ! it admin with manage_users can soft delete patient → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-… 0.03s  
+  ! it admin can list doctors → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pro… 0.07s  
+  ! it admin with verify_doctors can verify a doctor → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-pr… 0.04s  
+  ! it admin with verify_doctors can reject a doctor → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-pr… 0.04s  
+  ! it admin can view join requests → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fin… 0.05s  
+
+   DEPR  Tests\Feature\Auth\AdminAuthTest
+  ! it admin can login successfully → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fin… 0.05s  
+  ! it inactive admin cannot login → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fina… 0.03s  
+  ! it admin token cannot access patient routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project… 0.03s  
+  ! it admin token cannot access doctor routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.03s  
+
+   DEPR  Tests\Feature\Auth\DoctorAuthTest
+  ! it doctor can login with approved status → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.03s  
+  ! it doctor cannot login with pending status → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.04s  
+  ! it doctor cannot login with rejected status → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project… 0.03s  
+  ! it doctor token has doctor guard → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fi… 0.03s  
+  ! it doctor token cannot access patient routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-projec… 0.03s  
+
+   DEPR  Tests\Feature\Auth\PatientAuthTest
+  ! it registers a new patient with valid data → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.04s  
+  ! it fails registration with duplicate email → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.03s  
+  ! it fails registration with invalid phone format → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-pro… 0.03s  
+  ! it logs in with correct credentials → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km… 0.03s  
+  ! it returns 401 for wrong password → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\F… 0.03s  
+  ! it returns 401 for non-existent email → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main…  0.03s  
+  ! it cannot login with inactive account → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main…  0.03s  
+  ! it logs out and invalidates token → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\F… 0.03s  
+  ! it verifies OTP successfully → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_… 0.03s  
+  ! it rejects incorrect OTP → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Proj… 0.03s  
+
+   DEPR  Tests\Feature\Auth\RbacTest
+  ! it admin with view_analytics can access dashboard → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-p… 0.04s  
+  ! it admin without view_analytics gets 403 on dashboard → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fin… 0.03s  
+  ! it admin with manage_users can view patients list → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-p… 0.03s  
+  ! it admin without manage_users gets 403 on patients list → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\f… 0.03s  
+  ! it admin with manage_financials can access financials → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fin… 0.05s  
+  ! it admin without manage_financials gets 403 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project… 0.03s  
+  ! it admin with manage_chatbot can access chatbot management → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D… 0.05s  
+  ! it admin with process_payouts can view payout requests → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fi… 0.03s  
+  ! it admin without process_payouts gets 403 on payouts → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fina… 0.03s  
+  ! it admin with verify_doctors can access doctor management → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:… 0.03s  
+
+   DEPR  Tests\Feature\ChatbotContextTest
+  ! Chatbot Data Preferences API → it GET /data-preferences returns defaults for new user → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysq… 0.04s  
+  ! Chatbot Data Preferences API → it PUT /data-preferences disables data access → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_S… 0.03s  
+  ! Chatbot Data Preferences API → it PUT /data-preferences validates boolean field → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATT… 0.03s  
+
+   DEPR  Tests\Feature\ChatbotTest
+  ! POST /api/v1/chatbot/public/message → it returns bot reply for valid message → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_S… 0.04s  
+  ! POST /api/v1/chatbot/public/message → it returns 422 when message is empty → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL… 0.03s  
+  ! POST /api/v1/chatbot/public/message → it returns 422 when message exceeds max length → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql… 0.03s  
+  ! POST /api/v1/patient/chatbot/message → it dispatches queue job and returns processing status for authenticated user → Constant PDO::MYSQL_ATTR_SSL_CA is depr… 0.03s  
+  ! POST /api/v1/patient/chatbot/message → it returns 401 for unauthenticated request → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::A… 0.03s  
+  ! POST /api/v1/patient/chatbot/message → it saves user message to database → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_C… 0.03s  
+  ! GET /api/v1/patient/chatbot/messages/{id}/status → it returns processing status when message is pending → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since… 0.03s  
+  ! GET /api/v1/patient/chatbot/messages/{id}/status → it returns ready status with reply when message is replied → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated… 0.03s  
+  ! GET /api/v1/patient/chatbot/messages/{id}/status → it returns failed status when job failed → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pd… 0.03s  
+  ! GET /api/v1/patient/chatbot/sessions → it returns all sessions when bot_type filter is not provided → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5… 0.03s  
+  ! GET /api/v1/patient/chatbot/sessions → it returns only matching sessions when bot_type filter is provided → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated sin… 0.03s  
+  ! GET /api/v1/patient/chatbot/sessions → it returns 422 for invalid bot_type filter → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::A… 0.03s  
+  ! DELETE /api/v1/patient/chatbot/messages → it deletes all messages for the authenticated user → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use P… 0.04s  
+  ! POST /api/v1/patient/chatbot/sessions/{id}/reset → it deletes all messages in the specified session → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5… 0.03s  
+  ! it returns message status when guest token is valid → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final… 0.03s  
+  ! it returns 422 when guest token is missing → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.03s  
+  ! it returns 404 when guest token does not match message owner → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead //… 0.03s  
+  ! it cannot access an authenticated user message via guest endpoint → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA inste… 0.03s  
+  ! Bot Toggle — Disabled bot rejects requests → it returns error when guest sends message to disabled public bot → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated… 0.03s  
+  ! Bot Toggle — Disabled bot rejects requests → it returns error when authenticated patient sends to disabled bot → Constant PDO::MYSQL_ATTR_SSL_CA is deprecate… 0.03s  
+
+   DEPR  Tests\Feature\Chatbot\AdminChatbotTest
+  ! it T9-01 admin can view chatbot stats → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main…  0.07s  
+  ! it T9-02 admin can list all conversations → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project m… 0.03s  
+  ! it T9-03 admin can view messages of a specific session → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fi… 0.03s  
+  ! it T9-04 admin can delete a conversation → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.04s  
+  ! it T9-05 admin can toggle bot status → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main k… 0.06s  
+  ! it T9-06 admin can clear chatbot cache → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main… 0.04s  
+  ! it T9-07 non-admin user cannot access admin chatbot endpoints → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead /… 0.03s  
+  ! it T9-08 admin upload triggers sync job → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project mai… 0.04s  
+  ! it T9-09 admin can delete a knowledge document → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-proj… 0.03s  
+  ! it T9-10 document upload rejects non-allowed file extensions → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead //… 0.04s  
+  ! it T9-11 getBotAdminData rejects invalid bot type → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-p… 0.03s  
+
+   DEPR  Tests\Feature\Chatbot\BotTypeIsolationTest
+  ! it T6-01 getSessions with bot_type=pregnancy returns no public sessions → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA… 0.04s  
+  ! it T6-02 getSessions with bot_type=public returns no pregnancy sessions → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA… 0.04s  
+  ! it T6-03 getMessages for a session returns no messages from other sessions → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL… 0.03s  
+  ! it T6-04 sending message with bot_type=motherhood stores correct bot_type → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_… 0.04s  
+  ! it T6-05 all 4 bot types are independently filterable → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fin… 0.03s  
+  ! it T6-06 auto-generated session_id is prefixed with bot_type → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead //… 0.03s  
+
+   DEPR  Tests\Feature\Chatbot\CacheTest
+  ! it T14-01 ChatbotService returns cached reply when same message is sent twice → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T14-02 chatbot:clear-cache artisan command clears cache for specific bot_type → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T14-03 chatbot:clear-cache without argument clears all bot caches → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T14-04 cache key includes bot_type and message hash → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T14-05 cache is not used when cache.enabled=false → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+
+   DEPR  Tests\Feature\Chatbot\EndToEndTest
+  ! it T15-01 full conversation flow works end to end → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-p… 0.04s  
+
+   DEPR  Tests\Feature\Chatbot\GuestMessageStatusSecurityTest
+  ! it T4-01 returns message status when guest provides a valid token → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T4-02 returns 422 when guest token is missing → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T4-03 returns 404 when guest token does not match (IDOR prevention) → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T4-04 returns 404 when bot_type is not public even with correct token → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T4-05 cannot access authenticated user message via guest endpoint → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T4-06 accepts guest_token as query parameter → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T4-07 rate limit guest-chatbot-status kicks in after threshold → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T4-01b returns ready with reply when guest message is replied → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T4-01c returns failed when guest message processing failed → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T4-03b returns 404 for non-existent message ID → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+
+   DEPR  Tests\Feature\Chatbot\GuestSendMessageTest
+  ! it T3-01 guest can send a message without authentication → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\… 0.03s  
+  ! it T3-02 response contains reply and bot_type=public → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fina… 0.03s  
+  ! it T3-03 empty message returns 422 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\… 0.03s  
+  ! it T3-04 message exceeding max length returns 422 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-p… 0.03s  
+  ! it T3-05 rate limit chatbot_public kicks in after configured threshold → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA…  0.03s  
+
+   DEPR  Tests\Feature\Chatbot\PatientMessageStatusTest
+  ! it T2-01 owner polls processing status correctly → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-pr… 0.03s  
+  ! it T2-02 returns ready with reply when message is replied → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:… 0.03s  
+  ! it T2-03 returns failed when message processing failed → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fi… 0.03s  
+  ! it T2-04 user cannot poll another user message (ownership check) → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instea… 0.03s  
+  ! it T2-05 unauthenticated request returns 401 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-projec… 0.03s  
+  ! it T2-06 non-existent message id returns 404 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-projec… 0.03s  
+
+   DEPR  Tests\Feature\Chatbot\PatientSendMessageTest
+  ! it T1-01 authenticated user can send a message and receives processing status → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_… 0.03s  
+  ! it T1-02 message is stored in DB with correct user_id, bot_type, session_id → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SS… 0.04s  
+  ! it T1-03 ProcessChatbotMessageJob is dispatched to chatbot queue → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instea… 0.03s  
+  ! it T1-04 unauthenticated user receives 401 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.03s  
+  ! it T1-05 inactive user is rejected by PatientStatus middleware → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead…  0.03s  
+  ! it T1-06 empty message body returns 422 validation error → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\… 0.03s  
+  ! it T1-07 message exceeding max length returns 422 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-p… 0.03s  
+  ! it T1-08 valid bot_type values are accepted → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project… 0.04s  
+  ! it T1-09 invalid bot_type value returns 422 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project… 0.03s  
+  ! it T1-10 session_id is auto-generated when not provided → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\f… 0.03s  
+  ! it T1-11 provided session_id is reused correctly → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-pr… 0.03s  
+  ! it T1-12 force_new_session creates a new session even if recent one exists → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL… 0.03s  
+  ! it T1-13 response includes all required fields → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-proj… 0.03s  
+  ! it T1-14 bot_type defaults to life_stage mapping when not provided → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA inst… 0.04s  
+
+   DEPR  Tests\Feature\Chatbot\QueueJobTest
+  ! it T7-01 ProcessChatbotMessageJob is dispatched on chatbot queue → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instea… 0.04s  
+  ! it T7-02 job handle creates bot reply as AiChatMessage → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fi… 0.03s  
+  ! it T7-03 job handle updates user message metadata with replied status and reply_id → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::… 0.03s  
+  ! it T7-04 job handle with HuggingFace failure throws exception → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead /… 0.03s  
+  ! it T7-05 job has correct retry configuration → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-projec… 0.03s  
+  ! it T7-06 job constructor accepts 3 required parameters → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fi… 0.03s  
+
+   DEPR  Tests\Feature\Chatbot\RateLimitTest
+  ! it T8-01 authenticated user is rate-limited on chatbot_auth after threshold → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T8-02 guest user is rate-limited on chatbot_public → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T8-03 guest status endpoint is rate-limited → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T8-04 rate limit response returns 429 status code → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+  ! it T8-05 different users do not share rate limit buckets → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_And_Back\Back-end\vendor\nunomaduro\collision\src\Adapters\Phpunit\Printers\DefaultPrinter.php:278
+
+   DEPR  Tests\Feature\Chatbot\SessionManagementTest
+  ! it T5-01 getSessions returns only sessions belonging to authenticated user → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL… 0.03s  
+  ! it T5-02 getSessions filtered by bot_type returns correct sessions only → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA… 0.03s  
+  ! it T5-03 getSessions with invalid bot_type returns 422 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fi… 0.03s  
+  ! it T5-04 getSessions does not leak other users sessions → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\f… 0.03s  
+  ! it T5-05 getMessages returns messages for correct session_id and user → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA i… 0.03s  
+  ! it T5-06 getMessages returns empty array for session not owned by user → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA…  0.03s  
+  ! it T5-07 renameSession updates session_title in metadata → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\… 0.03s  
+  ! it T5-08 renameSession returns 404 for session not owned by user → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instea… 0.04s  
+  ! it T5-09 renameSession returns 422 if title is empty → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fina… 0.03s  
+  ! it T5-10 renameSession returns 422 if title exceeds 120 characters → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA inst… 0.03s  
+  ! it T5-11 deleteSession removes all messages and returns deleted_count → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA i… 0.03s  
+  ! it T5-12 deleteSession returns 404 for session not owned by user → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instea… 0.03s  
+  ! it T5-13 resetSession clears all messages and returns deleted_count → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA ins… 0.03s  
+  ! it T5-14 resetSession calls chatbotService resetChat via HTTP → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead /… 0.03s  
+  ! it T5-15 deleteAllMessages deletes ONLY current user messages → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead /… 0.04s  
+
+   DEPR  Tests\Feature\Consultation\PaymentCallbackTest
+  ! it confirms consultation on successful paymob callback → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fi… 0.04s  
+  ! it does NOT confirm consultation on failed paymob callback → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D… 0.03s  
+  ! it rejects callback with invalid HMAC — SECURITY TEST → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fin… 0.04s  
+  ! it returns 404 for unknown consultation in callback → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final… 0.03s  
+
+   DEPR  Tests\Feature\Consultation\SessionTest
+  ! it doctor can send a chat message in active consultation → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\… 0.05s  
+  ! it patient can receive chat messages → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main k… 0.04s  
+  ! it patient cannot read another patient consultation chat → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\… 0.04s  
+  ! it patient can view their prescription → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main… 0.04s  
+  ! it doctor can fetch patient history for consultation → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fina… 0.04s  
+  ! it doctor can get meeting info → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fina… 0.03s  
+
+   DEPR  Tests\Feature\Consultations\ConsultationApiTest
+  ! patient can list consultations → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fina… 0.04s  
+  ! patient can book available consultation → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project mai… 0.03s  
+  ! patient cannot cancel consultation within 24 hours → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-… 0.03s  
+  ! doctor can complete consultation → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fi… 0.04s  
+
+   DEPR  Tests\Feature\Doctor\DoctorFinancialTest
+  ! it doctor can view their financial stats → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.03s  
+  ! it doctor can view transaction history → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main… 0.04s  
+  ! it doctor can request a payout → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fina… 0.03s  
+
+   DEPR  Tests\Feature\Doctor\DoctorProfileTest
+  ! it verified doctor can view their profile → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project m… 0.03s  
+  ! it verified doctor can update their profile → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project… 0.03s  
+  ! it verified doctor can view dashboard stats → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project… 0.08s  
+  ! it pending doctor cannot access verified doctor routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fi… 0.03s  
+  ! it verified doctor can view their patients → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.03s  
+
+   DEPR  Tests\Feature\Doctor\DoctorScheduleTest
+  ! it doctor can set working hours → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fin… 0.03s  
+  ! it doctor can get their working hours → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main…  0.03s  
+  ! it doctor can update availability status → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.03s  
+
+   DEPR  Tests\Feature\ExampleTest
+  ! the application returns a successful response → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-proje… 0.03s  
+
+   DEPR  Tests\Feature\IotIntegrationTest
+  ! guest cannot access iot routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fina… 0.03s  
+  ! authenticated patient can fetch auth url → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.03s  
+  ! authenticated patient without connection receives disconnected metrics state → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_S… 0.03s  
+
+   DEPR  Tests\Feature\Notifications\NotificationControllerTest
+  ! patient can get notifications → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final… 0.03s  
+  ! mark as read endpoint → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project… 0.03s  
+  ! mark all as read endpoint → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pro… 0.03s  
+  ! notification settings validation and update → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project… 0.06s  
+  ! notification settings empty request returns 422 → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-pro… 0.04s  
+
+   DEPR  Tests\Feature\Notifications\NotificationServiceTest
+  ! create persists notification to database → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.04s  
+  ! create queues email when email present → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main… 0.03s  
+  ! create does not send email when disabled → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.03s  
+  ! notify consultation accepted creates patient notification → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:… 0.04s  
+  ! notify payment success notifies patient and doctor and admins → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead /… 0.05s  
+  ! notify patient deactivated → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pr… 0.06s  
+  ! notify consultation booked creates doctor notification → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fi… 0.05s  
+  ! notify article approved → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Proje… 0.05s  
+  ! notify article rejected → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Proje… 0.04s  
+  ! notify doctor verified → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Projec… 0.04s  
+  ! notify doctor verification rejected → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km… 0.04s  
+  ! notify doctor deactivated → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pro… 0.04s  
+  ! notify payout processed → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Proje… 0.03s  
+  ! notify join request all statuses → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fi… 0.04s  
+  ! notify consultation cancelled by admin notifies both → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fina… 0.03s  
+  ! admins receive new booking notification → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project mai… 0.04s  
+  ! mark as read → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Front_An… 0.03s  
+  ! mark all as read → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project_Fron… 0.03s  
+
+   DEPR  Tests\Feature\Notifications\SendBulkNotificationJobTest
+  ! bulk notification job handles all target → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.04s  
+  ! bulk notification job handles doctors only → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.04s  
+
+   DEPR  Tests\Feature\PatientDataCollectorTest
+  ! PatientDataCollectorService → it returns empty array for public bot type → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_C… 0.04s  
+  ! PatientDataCollectorService → it returns empty array when feature flag is disabled → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::… 0.03s  
+  ! PatientDataCollectorService → it returns empty array when data_access_enabled is false → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mys… 0.03s  
+  ! PatientDataCollectorService → it invalidateCache clears all bot type caches → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SS… 0.04s  
+  ! PatientDataCollectorService → it predictions never include raw probabilities → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_S… 0.04s  
+
+   DEPR  Tests\Feature\Patient\AiPredictionTest
+  ! it predicts GDM risk with valid input → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main…  0.04s  
+  ! it returns 422 for GDM with missing fields → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.03s  
+  ! it predicts preeclampsia risk → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final… 0.04s  
+  ! it returns prediction history → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final… 0.03s  
+  ! it returns prefill data from patient profile → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-projec… 0.03s  
+  ! it handles HF timeout gracefully → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fi… 0.03s  
+  ! it handles HF error response gracefully → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project mai… 5.05s  
+
+   DEPR  Tests\Feature\Patient\HealthTrackersTest
+  ! it stores a weight entry → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Proj… 0.05s  
+  ! it returns weight history → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pro… 0.03s  
+  ! it deletes a weight entry → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pro… 0.03s  
+  ! it stores a mood entry → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Projec… 0.03s  
+  ! it returns mood analytics → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pro… 0.03s  
+  ! it validates mood value range → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final… 0.03s  
+  ! it starts a new period cycle → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_… 0.03s  
+  ! it returns period predictions → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final… 0.04s  
+  ! it returns period analytics → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_P… 0.04s  
+  ! it stores a fertility entry → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_P… 0.04s  
+  ! it returns fertile window calculation → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main…  0.04s  
+  ! it returns comprehensive trackers summary → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project m… 0.04s  
+
+   DEPR  Tests\Feature\Patient\LabTestTest
+  ! it uploads a lab test image → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_P… 0.08s  
+  ! it rejects non-image file type → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fina… 0.05s  
+  ! it returns lab test list → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Proj… 0.04s  
+  ! it returns single lab test details → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\… 0.03s  
+  ! it polls status as pending before processing → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-projec… 0.03s  
+  ! it polls status as completed after processing → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-proje… 0.04s  
+  ! it deletes a lab test → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Project… 0.03s  
+  ! it cannot access another patient lab test → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project m… 0.04s  
+
+   DEPR  Tests\Feature\Patient\PregnancyTest
+  ! it starts a new pregnancy → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Pro… 0.03s  
+  ! it returns current active pregnancy → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km… 0.03s  
+  ! it returns null when no active pregnancy → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.03s  
+  ! it stores a pregnancy entry with weight sync → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-projec… 0.03s  
+  ! it returns week info for current week → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main…  0.03s  
+  ! it adds a medication to pregnancy → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\F… 0.04s  
+  ! it records a kick counter session → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\F… 0.03s  
+  ! it lists kick sessions → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Final_Projec… 0.03s  
+
+   DEPR  Tests\Feature\RouteSecurityTest
+  ! all patient routes are protected → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fi… 0.03s  
+  ! all doctor routes are protected → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project main km\Fin… 0.03s  
+
+   DEPR  Tests\Feature\Security\CrossGuardAccessTest
+  ! it patient token rejected on doctor routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project…  0.03s  
+  ! it patient token rejected on admin routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project m… 0.04s  
+  ! it doctor token rejected on patient protected routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fina… 0.03s  
+  ! it doctor token rejected on admin routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.03s  
+  ! it admin token rejected on patient routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project m… 0.04s  
+  ! it admin token rejected on doctor routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final-project ma… 0.03s  
+  ! it unauthenticated request gets 401 on patient routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fin… 0.03s  
+  ! it unauthenticated request gets 401 on doctor routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fina… 0.04s  
+  ! it unauthenticated request gets 401 on admin routes → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final… 0.03s  
+
+   DEPR  Tests\Feature\TrackerProfileSyncTest
+  ! pregnancy entry syncs to profile and weight tracker → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\final… 0.03s  
+  ! updating profile medical info syncs to weight tracker → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\fin… 0.03s  
+
+   DEPR  Tests\Integration\FullBookingFlowTest
+  ! it completes full booking flow from search to completion → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\… 1.25s  
+
+   DEPR  Tests\Integration\PaymentToConfirmationTest
+  ! it full payment flow: initiate → webhook success → confirmed → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead //… 2.43s  
+
+  Tests:    307 deprecated, 1 passed (564 assertions)
+  Duration: 20.12s
+

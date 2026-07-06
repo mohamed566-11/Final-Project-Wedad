@@ -1,0 +1,100 @@
+﻿#3 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\symfony\\mailer\\Transport\\AbstractTransport.php(69): Symfony\\Component\\Mailer\\Transport\\Smtp\\SmtpTransport->doSend(Object(Symfony\\Component\\Mailer\\SentMessage))
+#4 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\symfony\\mailer\\Transport\\Smtp\\SmtpTransport.php(138): Symfony\\Component\\Mailer\\Transport\\AbstractTransport->send(Object(Symfony\\Component\\Mime\\Email), Object(Symfony\\Component\\Mailer\\DelayedEnvelope))
+#5 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(584): Symfony\\Component\\Mailer\\Transport\\Smtp\\SmtpTransport->send(Object(Symfony\\Component\\Mime\\Email), Object(Symfony\\Component\\Mailer\\DelayedEnvelope))
+#6 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailer.php(331): Illuminate\\Mail\\Mailer->sendSymfonyMessage(Object(Symfony\\Component\\Mime\\Email))
+#7 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(207): Illuminate\\Mail\\Mailer->send('emails.notifica...', Array, Object(Closure))
+#8 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\Localizable.php(19): Illuminate\\Mail\\Mailable->{closure:Illuminate\\Mail\\Mailable::send():200}()
+#9 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php(200): Illuminate\\Mail\\Mailable->withLocale(NULL, Object(Closure))
+#10 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Mail\\SendQueuedMailable.php(82): Illuminate\\Mail\\Mailable->send(Object(Illuminate\\Mail\\MailManager))
+#11 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Mail\\SendQueuedMailable->handle(Object(Illuminate\\Mail\\MailManager))
+#12 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#13 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#14 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#15 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(836): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#16 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(129): Illuminate\\Container\\Container->call(Array)
+#17 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Bus\\Dispatcher->{closure:Illuminate\\Bus\\Dispatcher::dispatchNow():126}(Object(Illuminate\\Mail\\SendQueuedMailable))
+#18 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(137): Illuminate\\Pipeline\\Pipeline->{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}(Object(Illuminate\\Mail\\SendQueuedMailable))
+#19 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Bus\\Dispatcher.php(133): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#20 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\CallQueuedHandler.php(134): Illuminate\\Bus\\Dispatcher->dispatchNow(Object(Illuminate\\Mail\\SendQueuedMailable), false)
+#21 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Queue\\CallQueuedHandler->{closure:Illuminate\\Queue\\CallQueuedHandler::dispatchThroughMiddleware():127}(Object(Illuminate\\Mail\\SendQueuedMailable))
+#22 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(137): Illuminate\\Pipeline\\Pipeline->{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}(Object(Illuminate\\Mail\\SendQueuedMailable))
+#23 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\CallQueuedHandler.php(127): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#24 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\CallQueuedHandler.php(68): Illuminate\\Queue\\CallQueuedHandler->dispatchThroughMiddleware(Object(Illuminate\\Queue\\Jobs\\DatabaseJob), Object(Illuminate\\Mail\\SendQueuedMailable))
+#25 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\Jobs\\Job.php(102): Illuminate\\Queue\\CallQueuedHandler->call(Object(Illuminate\\Queue\\Jobs\\DatabaseJob), Array)
+#26 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\Worker.php(469): Illuminate\\Queue\\Jobs\\Job->fire()
+#27 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\Worker.php(419): Illuminate\\Queue\\Worker->process('database', Object(Illuminate\\Queue\\Jobs\\DatabaseJob), Object(Illuminate\\Queue\\WorkerOptions))
+#28 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\Worker.php(187): Illuminate\\Queue\\Worker->runJob(Object(Illuminate\\Queue\\Jobs\\DatabaseJob), 'database', Object(Illuminate\\Queue\\WorkerOptions))
+#29 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\Console\\WorkCommand.php(148): Illuminate\\Queue\\Worker->daemon('database', 'default', Object(Illuminate\\Queue\\WorkerOptions))
+#30 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Queue\\Console\\WorkCommand.php(131): Illuminate\\Queue\\Console\\WorkCommand->runWorker('database', 'default')
+#31 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Queue\\Console\\WorkCommand->handle()
+#32 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#33 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(96): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#34 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#35 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(836): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#36 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(211): Illuminate\\Container\\Container->call(Array)
+#37 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\symfony\\console\\Command\\Command.php(335): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#38 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#39 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\symfony\\console\\Application.php(1103): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#40 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\symfony\\console\\Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Queue\\Console\\WorkCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#41 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\symfony\\console\\Application.php(195): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#42 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(197): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#43 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1235): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#44 D:\\final-project-front-back\\Final_Project_Front_And_Back\\Back-end\\artisan(16): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
+#45 {main}
+"} 
+[2026-06-08 03:59:27] local.INFO: Logout request received for patient.  
+[2026-06-08 03:59:27] local.INFO: User found, deleting token.  
+[2026-06-08 03:59:27] local.INFO: Token deleted.  
+[2026-06-08 04:00:08] local.INFO: Pending reminder #39 processed for consultation #41  
+[2026-06-08 04:00:08] local.INFO: CancelExpiredConsultations: Found 1 unpaid consultations to cancel  
+[2026-06-08 04:00:09] local.ERROR: Failed to cancel expired consultation #40: Expected response code "354" but got code "550", with message "550 5.7.0 Too many emails per second. Please upgrade your plan https://mailtrap.io/billing/plans/testing".  
+[2026-06-08 04:00:09] local.INFO: chatbot_cleanup_completed {"deleted_count":0,"retention_days":90,"cutoff_date":"2026-03-10","ran_at":"2026-06-08T01:00:09.355105Z"} 
+[2026-06-08 04:00:09] local.INFO: Broadcasting [Illuminate\Notifications\Events\BroadcastNotificationCreated] on channels [private-App.Models.User.2] with payload:
+{
+    "type": "App\\Notifications\\ConsultationReminderNotification",
+    "consultation_id": 41,
+    "reminder_type": "1_hour",
+    "title": "\u0645\u0648\u0639\u062f\u0643 \u0628\u0639\u062f \u0633\u0627\u0639\u0629!",
+    "body": "\u0627\u0633\u062a\u0634\u0627\u0631\u062a\u0643 \u0645\u0639 \u062f. \u062f. \u062e\u0627\u0644\u062f \u0631\u0645\u0636\u0627\u0646 \u062a\u0628\u062f\u0623 \u0628\u0639\u062f \u0633\u0627\u0639\u0629 \u0648\u0627\u062d\u062f\u0629",
+    "doctor_name": "\u062f. \u062e\u0627\u0644\u062f \u0631\u0645\u0636\u0627\u0646",
+    "date": "2026-06-07T21:00:00.000000Z",
+    "time": "05:00:00",
+    "consultation_type": "video",
+    "url": "\/patient\/consultations\/41",
+    "video_url": "\/patient\/consultations\/41\/video",
+    "id": "4e404e70-6d39-48bb-9a84-cf08d6446255",
+    "socket": null
+}  
+[2026-06-08 04:05:21] local.INFO: Google Meet created for consultation #43: https://meet.google.com/sqc-bsub-kcv  
+[2026-06-08 04:15:17] local.ERROR: Paymob Auth Error: Server error: `POST https://accept.paymob.com/api/auth/tokens` resulted in a `502 Bad Gateway` response:
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html> (truncated...)
+  
+[2026-06-08 04:15:40] local.ERROR: Paymob Auth Error: Server error: `POST https://accept.paymob.com/api/auth/tokens` resulted in a `502 Bad Gateway` response:
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html> (truncated...)
+  
+[2026-06-08 04:16:50] local.ERROR: Paymob Auth Error: Server error: `POST https://accept.paymob.com/api/auth/tokens` resulted in a `502 Bad Gateway` response:
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html> (truncated...)
+  
+[2026-06-08 04:17:03] local.ERROR: Paymob Auth Error: Server error: `POST https://accept.paymob.com/api/auth/tokens` resulted in a `502 Bad Gateway` response:
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html> (truncated...)
+  

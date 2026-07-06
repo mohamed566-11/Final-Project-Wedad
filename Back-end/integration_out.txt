@@ -1,0 +1,66 @@
+
+   FAIL  Tests\Integration\FullBookingFlowTest
+  ⨯ it completes full booking flow from search to completion                                                                                                       5.34s  
+
+   FAIL  Tests\Integration\PaymentToConfirmationTest
+  ⨯ it full payment flow: initiate → webhook success → confirmed                                                                                                   1.55s  
+  ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Integration\FullBookingFlowTest > it completes full booking flow from search to completion                                                               
+  Expected response status code [200] but received 422.
+Failed asserting that 422 is identical to 200.
+
+The following errors occurred during the last request:
+
+{
+    "status": false,
+    "message": "بيانات غير صالحة",
+    "errors": {
+        "doctor_notes": [
+            "يجب إضافة ملاحظات الطبيب"
+        ]
+    }
+}
+
+  at tests\Integration\FullBookingFlowTest.php:69
+     65▕ 
+     66▕     // 6. Doctor completes session
+     67▕     $completeResponse = $this->actingAs($doctor, 'doctor')
+     68▕                              ->putJson("/api/v1/doctor/consultations/{$consultationId}/complete");
+  ➜  69▕     $completeResponse->assertOk();
+     70▕ 
+     71▕     // 7. Patient leaves review
+     72▕     $reviewResponse = $this->actingAs($user, 'patient')
+     73▕                            ->postJson("/api/v1/patient/consultations/{$consultationId}/review", [
+
+  ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Integration\PaymentToConfirmationTest > it full payment flow: initiate → webhook success → confirmed                                                     
+  Expected response status code [200] but received 422.
+Failed asserting that 422 is identical to 200.
+
+The following errors occurred during the last request:
+
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "payment_method": [
+            "The payment method field is required."
+        ]
+    },
+    "status": "error"
+}
+
+  at tests\Integration\PaymentToConfirmationTest.php:57
+     53▕     // 3. Initiate payment → payment_url returned
+     54▕     $payResponse = $this->actingAs($user, 'patient')
+     55▕                         ->postJson("/api/v1/patient/consultations/{$consultationId}/pay");
+     56▕ 
+  ➜  57▕     $payResponse->assertOk();
+     58▕ 
+     59▕     // 4. Paymob webhook HMAC-verified callback
+     60▕     $payload = $this->buildPaymobCallback($consultationId, true);
+     61▕     $callbackResponse = $this->postJson('/api/v1/patient/payments/paymob/callback', $payload);
+
+
+  Tests:    2 failed (9 assertions)
+  Duration: 7.23s
+

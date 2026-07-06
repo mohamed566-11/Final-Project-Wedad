@@ -1,0 +1,23 @@
+
+   FAIL  Tests\Integration\FullBookingFlowTest
+  ⨯ it completes full booking flow from search to completion      5.68s  
+  ─────────────────────────────────────────────────────────────────────  
+   FAILED  Tests\Integration\FullBookingFlowTest > it completes full…    
+  Expected response status code [200] but received 400.
+Failed asserting that 400 is identical to 200.
+
+  at tests\Integration\FullBookingFlowTest.php:53
+     49▕ 
+     50▕     // 4. Paymob callback success → consultation confirmed
+     51▕     $payload = $this->buildPaymobCallback($consultationId, true);
+     52▕     $callbackResponse = $this->postJson('/api/v1/patient/payments/paymob/callback', $payload);
+  ➜  53▕     $callbackResponse->assertOk();
+     54▕ 
+     55▕     $this->assertDatabaseHas('consultations', [
+     56▕         'id'     => $consultationId,
+     57▕         'status' => 'confirmed',
+
+
+  Tests:    1 failed (3 assertions)
+  Duration: 7.59s
+

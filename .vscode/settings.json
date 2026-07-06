@@ -1,0 +1,49 @@
+{
+  // Editor Settings
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // PHP Settings
+  "[php]": {
+    "editor.defaultFormatter": "open-solutions.intelephense"
+  },
+
+  // TypeScript/React Settings
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // File Associations
+  "files.associations": {
+    "*.php": "php"
+  },
+
+  // Search Exclusions
+  "search.exclude": {
+    "**/vendor": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.git": true,
+    "**/storage/framework": true
+  },
+
+  // Tailwind CSS IntelliSense
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+
+  // GitHub Copilot MCP
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true,
+    "windsurf": true,
+    "cursor-global": true,
+    "cursor-workspace": true
+  }
+}

@@ -1,0 +1,77 @@
+# توثيق ميزة دمج بيانات المريضة مع الشات بوت ودليل الاختبار اليدوي (QA Guide)
+
+يسرد هذا الدليل جميع التحديثات والميزات التي تمت إضافتها إلى نظام المحادثة الذكي (Chatbot)، مع توفير خطوات دقيقة وشاملة للمطور أو فريق ضمان الجودة (QA) لاختبار الميزات يدوياً.
+
+---
+
+## 1. ما تم إضافته وتحديثه (Documentation)
+
+### 📌 الواجهة الخلفية (Backend)
+1. **الجداول والنماذج (Database & Models):**
+   - إضافة جدول `patient_chatbot_preferences` للتحكم في تفضيلات إمكانية وصول الذكاء الاصطناعي لبيانات المريضة (مشاركة التوقعات، المتتبعات، الخ).
+   - ربط الموديول [PatientChatbotPreference](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Models/PatientChatbotPreference.php#7-62) كعلاقة `hasOne` مع موديل الـ [User](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Models/User.php#15-212).
+   
+2. **الخدمات لمعالجة البيانات (Services):**
+   - إضافة [PatientDataCollectorService](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/PatientDataCollectorService.php#11-186): خدمة تقوم بجمع بيانات المريضة (ملف شخصي، حمل، تنبؤات، متتبعات) وفقًا لمرحلتها الحالية (حمل، أمومة) وتصفيتها لضمان **تقليل البيانات المرسلة (Data Minimization)** وعدم إدراج الأرقام الخام كنسب التنبؤات (Probability).
+   - إعدادات [Cache](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/Patient/PatientDataCollectorService.php#436-445) ضمن خدمة الذكاء الاصطناعي لضمان الأداء السلس، وتفعيل دالة [invalidateCache()](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/Patient/PatientDataCollectorService.php#457-469) لمسح ذاكرة التخزين المؤقت فورًا عند تحديث أي متتبع صحي (وزن، مزاج) أو ظهور أخطار تنبؤات جديدة.
+   - تحديث [ChatbotService](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/ChatbotService.php#10-587) لتغيير [sanitizeForExternalAi()](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Services/ChatbotService.php#474-488) لتعمل بشكل `public` وتسمح بتنظيف البيانات الحساسة (الايميل، الهاتف، الهوية) من أي نصوص خارجية (PII Redaction).
+
+3. **حاويات الوظائف (Controllers & Jobs):**
+   - تحديث [ChatbotController](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Http/Controllers/Api/Patient/ChatbotController.php#17-468): إضافة نهايات (Endpoints) جديدة `GET/PUT /api/v1/patient/chatbot/data-preferences`.
+   - تعديل [ProcessChatbotMessageJob](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Back-end/app/Jobs/ProcessChatbotMessageJob.php#14-80): حقن السياق بشكل صامت (Context Prompt) داخل تاريخ المحادثة (History) قبل إرسال الرسالة إلى `Hugging Face`.
+
+### 📌 الواجهة الأمامية (Frontend)
+1. **صناديق الخيارات والتصميم (UI & Hooks):**
+   - كتابة Hook [useChatbotPreferences.ts](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Front-End/src/hooks/useChatbotPreferences.ts) للتفاعل مع إعدادات البوت والتحكم بصلاحية الوصول باستخدام `TanStack Query v5` (لضمان تأثير مباشر ولحظي - Optimistic Update).
+   - دمج [PrivacySettingsModal.tsx](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Front-End/src/components/chatbot/PrivacySettingsModal.tsx) وربطها مع رز ايقونة "الدرع" في رأس نافذة الشات بوت ([ChatHeader.tsx](file:///d:/Final_Project_Implementation/Final_Project_Front_And_Back/Front-End/src/components/chatbot/ChatHeader.tsx)).
+   - تنبيهات UI تمنح المستخدمة كامل الخصوصية لتعطيل مشاركة البيانات متى شاءت.
+
+---
+
+## 2. دليل الاختبار اليدوي الشامل (Manual QA Testing Steps)
+
+لكي نقوم بتجربة النظام بشكل يحاكي المستخدم الحقيقي بأدق تفاصيله، يُرجى إتباع الخطوات التالية:
+
+### الخطوة 1: ضبط البيئة ⚙️
+تأكد أولاً أن ملف `.env` الخاص بالـ Backend يحتوي على تفعيل الميزة:
+```env
+CHATBOT_PATIENT_CONTEXT_ENABLED=true
+```
+
+### الخطوة 2: اختبار إعدادات الخصوصية (Privacy UI) 🛡️
+1. قم بالدخول بحساب مريضة من خلال المتصفح أو التطبيق.
+2. افتح نافذة **المساعد الذكي (Chatbot)**.
+3. أعلى المحادثة، اضغط على **أيقونة الدرع (الخصوصية)**.
+4. **المتوقع:** يجب أن تظهر نافذة إدارة الخصوصية.
+5. قم بتفعيل الخيار الرئيسي "مشاركة البيانات".
+6. جرب تشغيل وتعطيل مفاتيح المشاركة الفرعية (مثل: "مشاركة نتائج التقييمات" أو "مشاركة المتتبعات").
+7. قم بعمل تحديث للصفحة (Refresh) للتحقق من أن الإعدادات تم حفظها بنجاح في قاعدة البيانات (سيتم تحميلها فوراً).
+
+### الخطوة 3: اختبار حقن بيانات المريضة في الشات بوت 💉
+1. تأكد من أن حالة المستخدمة هي إما **في فترة الحمل** أو **في مرحلة الأمومة**.
+2. وتأكد من أن لديها بعض البيانات، على سبيل المثال قم بتسجيل "وزن جديد" من المتتبعات، أو قم باتخاذ فحص من تنبؤات سكري الحمل أو تسمم الحمل.
+3. اذهب إلى نافذة الشات بوت، وأرسل رسالة نصية تسأل فيها:
+   - *"بناءً على حالتي الصحية ومدخلاتي الأخيرة، هل هناك أي مخاطر على حملي أو نصائح تود إعطائي إياها؟"*
+4. **المتوقع:** بناءً على البيانات التي وافقت على مشاركتها، يجب ألا يفشي البوت عن نسب أرقام احتمالية الإصابة، بل سيخبرك بصيغة وصفية (مثلاً: *"بالنسبة لخطر تسمم الحمل فهو بمستوى الخطورة المنخفضة.."*). كما يُفترض أن يذكر وزنك الأخير أو مزاجك إن سألت عنهما.
+
+### الخطوة 4: التحقق من سرية البوت العام (Public Bot) 🚫
+1. استخدم أي صفحة ليست تابعة لتسجيل الدخول للحصول على نافذة البوت العام (إن وجدت)، أو حول الحساب لمرحلة "مستقلة/زائر".
+2. اسأل البوت عن أي معلومات تتعلق بحالتك الشخصية.
+3. **المتوقع:** لا يمتلك البوت العام أية معلومات طبية تخصك وسيجيب بصورة عامة، حيث يمتنع النظام جذرياً عن مشاركة السياق عبر واجهة الـ (Public).
+
+### الخطوة 5: اختبار الـ Cache Invalidation (التنظيف التلقائي) 🔄
+1. بينما الشات بوت مفتوح ومعك آخر سياق للمعلومات (ولنقل كان وزنك 65 كيلوجرام).
+2. افتح صفحة "متتبع الوزن" في تبويبة أخرى، وقم بإضافة وزن جديد (مثلاً 70 كيلوجرام).
+3. ارجع فوراً للشات بوت واسأله مستفسراً: *"ما هو آخر وزن قمت بتسجيله اليوم؟"*
+4. **المتوقع:** يجب أن يذكر البوت الـ 70 كيلوجرام. حيث أن إدخالك الجديد بصفحة المتتبعات قام بحذف التخزين المؤقت (Cache Invalidation) المخصص للشات بوت بصورة لحظية.
+
+### الخطوة 6: حماية البيانات الشخصية (PII Redaction) 🔒
+1. أرسل في المحادثة رسالة تحتوي على رقم هاتفك وبطاقة الهوية أو الايميل.
+   - مثال: *"رقم هاتفي هو 01012345678 وايميلي هو example@widad.com"*
+2. راجع ملفات الـ (Logs) الخاصة بالـ Backend، وراقب الـ Request المرسل إلى سيرفر `Hugging Face`.
+3. **المتوقع:** يجب أن يتم التبديل في الـ Database / Request قبل وصوله للخادم الخارجي للقيم التالية: `[REDACTED_PHONE]` و `[REDACTED_EMAIL]`.
+
+---
+
+> [!TIP]
+> يمكنك مراقبة لوحة الـ Logs الخاصة بالـ `Laravel` في `storage/logs/laravel.log` لمشاهدة كلمة `chatbot_patient_context_sent` لتأكيد أن سياق البيانات يتم جمعه وبناءه بنجاح قبيل إرساله إلى خوادم الذكاء الاصطناعي.

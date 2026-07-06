@@ -1,0 +1,10 @@
+
+   DEPR  Tests\Integration\FullBookingFlowTest
+  ! it completes full booking flow from search to completion → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead // D:\… 2.15s  
+
+   DEPR  Tests\Integration\PaymentToConfirmationTest
+  ! it full payment flow: initiate → webhook success → confirmed → Constant PDO::MYSQL_ATTR_SSL_CA is deprecated since 8.5, use Pdo\Mysql::ATTR_SSL_CA instead //… 3.22s  
+
+  Tests:    2 deprecated (13 assertions)
+  Duration: 5.58s
+
